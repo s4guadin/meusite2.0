@@ -1,0 +1,85 @@
+name: Atualizar perfil Steam
+
+# Roda a cada 10 minutos e também manualmente (aba "Actions")
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+# Permite que o workflow faça commit no próprio repositório
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fazer checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Baixar dados do perfil Steam (XML público)
+        run: |
+          curl -sL "https://steamcommunity.com/id/saguadin038/?xml=1" -o steam_data.xml
+          head -c 200 steam_data.xml
+
+      - name: Converter XML para steam.json
+        run: |
+          python3 - <<'PYEOF'
+          import datetime, json, re
+
+          xml = open("steam_data.xml", encoding="utf-8", errors="replace").read()
+
+          def campo(nome):
+              # CDATA ou valor simples
+              m = re.search(r"<%s><!\[CDATA\[(.*?)\]\]></%s>" % (nome, nome), xml, re.S)
+              if m:
+                  return m.group(1)
+              m = re.search(r"<%s>([^<]*)</%s>" % (nome, nome), xml, re.S)
+              return m.group(1).strip() if m else None
+
+          def campos(nome):
+              out = re.findall(r"<%s><!\[CDATA\[(.*?)\]\]></%s>" % (nome, nome), xml, re.S)
+              if not out:
+                  out = re.findall(r"<%s>([^<]*)</%s>" % (nome, nome), xml, re.S)
+              return out
+
+          # jogos recentes: pares gameName + hoursPlayed (2 semanas)
+          jogos = []
+          matches = re.findall(
+              r"<gameName><!\[CDATA\[(.*?)\]\]></gameName>.*?<hoursPlayed>([^<]*)</hoursPlayed>",
+              xml, re.S)
+          for nome, horas in matches:
+              jogos.append({"nome": nome, "horas": horas})
+              if len(jogos) >= 6:
+                  break
+
+          perfil = {
+              "steamID":      campo("steamID"),
+              "steamID64":    campo("steamID64"),
+              "onlineState":  campo("onlineState"),
+              "stateMessage": campo("stateMessage"),
+              "memberSince":  campo("memberSince"),
+              "location":     campo("location"),
+              "realname":     campo("realname"),
+              "summary":      campo("summary"),
+              "gameName":     campo("gameName"),
+              "gameLink":     campo("gameLink"),
+              "gameIcon":     campo("gameIcon"),
+              "hoursPlayed":  campo("hoursPlayed"),
+              "avatarFull":   campo("avatarFull"),
+              "jogos":        jogos,
+              "atualizadoEm": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          }
+
+          with open("steam.json", "w", encoding="utf-8") as f:
+              json.dump(perfil, f, ensure_ascii=False, indent=2)
+          print("steam.json gerado:", json.dumps(perfil, ensure_ascii=False)[:200])
+          PYEOF
+
+      - name: Commitar o JSON atualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add steam.json steam_data.xml
+          git diff --cached --quiet || git commit -m "chore: atualiza dados do perfil Steam (bot)"
+          git push

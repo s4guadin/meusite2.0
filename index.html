@@ -452,6 +452,81 @@
     .link-grande svg { flex-shrink: 0; }
 
     /* ==========================================================
+       PERFIL STEAM (estilo da própria Steam — azul escuro)
+       ========================================================== */
+    #card-steam {
+      border: 1px solid #66c0f4;
+      background: #171a21;
+      color: #c7d5e0;
+      padding: 24px;
+      font-size: 14px;
+    }
+    #card-steam .steam-cabecalho {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    #card-steam .steam-avatar {
+      width: 128px; height: 128px;
+      border: 2px solid #66c0f4;
+      background: #1b2838;
+    }
+    #card-steam .steam-nome { font-size: 22px; color: #ffffff; margin-bottom: 6px; letter-spacing: 1px; }
+    #card-steam .steam-status { font-size: 13px; }
+    #card-steam .estado-online  { color: #57cbde; }
+    #card-steam .estado-offline { color: #898989; }
+    #card-steam .estado-ocupado { color: #ff3b3b; }
+    #card-steam .estado-ausente { color: #f3e04a; }
+    #card-steam .steam-info {
+      display: flex; flex-wrap: wrap; gap: 8px 22px;
+      font-size: 12px; color: #8f98a0;
+      border-top: 1px solid #2a475e;
+      padding-top: 14px;
+      margin-bottom: 16px;
+    }
+    #card-steam .steam-info b { color: #c7d5e0; font-weight: 400; }
+    #card-steam .steam-resumo {
+      border-left: 3px solid #66c0f4;
+      background: #1b2838;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #c7d5e0;
+      margin-bottom: 16px;
+    }
+    #card-steam .steam-jogando {
+      border: 1px solid #66c0f4;
+      background: #1b2838;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    #card-steam .rotulo-steam {
+      color: #66c0f4;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    #card-steam .steam-jogos { border-top: 1px solid #2a475e; padding-top: 12px; }
+    #card-steam .steam-jogo {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid #1b2838;
+      font-size: 13px;
+      color: #c7d5e0;
+    }
+    #card-steam .steam-jogo .horas { color: #66c0f4; }
+    #card-steam .steam-update { margin-top: 14px; font-size: 11px; color: #8f98a0; }
+    #card-steam a { color: #66c0f4; text-decoration: none; }
+    #card-steam a:hover { color: #ffffff; }
+    #card-steam .steam-carregando, #card-steam .steam-erro { color: #66c0f4; font-size: 13px; }
+
+    /* ==========================================================
        BARRA DE STATUS INFERIOR (estilo VS Code)
        ========================================================== */
     footer#barra-status {
@@ -587,21 +662,11 @@
         </div>
       </section>
 
-      <!-- ============ SEÇÃO STEAM ============ -->
+      <!-- ============ SEÇÃO STEAM (perfil estilo Steam) ============ -->
       <section id="pag-steam" class="pagina">
-        <h2>Steam</h2>
-        <div class="grid-links">
-          <a class="link-grande" href="https://steamcommunity.com/id/saguadin038/" target="_blank" rel="noopener">
-            <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="7" fill="none" stroke="#8a8a8a" stroke-width="2"/>
-              <rect x="17" y="13" width="6" height="6" fill="#8a8a8a" transform="rotate(45 20 16)"/>
-              <circle cx="9" cy="11" r="2.5" fill="#8a8a8a"/>
-            </svg>
-            <div>
-              <div class="rotulo">perfil</div>
-              <div class="valor">steamcommunity.com/id/saguadin038/</div>
-            </div>
-          </a>
+        <h2>Steam — Perfil</h2>
+        <div id="card-steam">
+          <div class="steam-carregando">consultando perfil na Steam...</div>
         </div>
       </section>
 
@@ -930,6 +995,96 @@
     }
     carregarDiscord();
     setInterval(carregarDiscord, 60000);   // atualiza a cada 60 segundos
+
+    /* ==========================================================
+       9) STEAM: perfil no estilo Steam
+       ----------------------------------------------------------
+       Lê o arquivo steam.json gerado pelo GitHub Actions a cada
+       10 minutos (o navegador não consegue acessar a Steam direto
+       por causa do CORS/iframe, então o bot faz isso por nós).
+       ========================================================== */
+    // mapeamento do estado online (a Steam pode enviar número ou texto)
+    const ESTADO_STEAM = {
+      0:              { texto: "Offline",     classe: "estado-offline" },
+      1:              { texto: "Online",      classe: "estado-online" },
+      2:              { texto: "Ocupado",     classe: "estado-ocupado" },
+      3:              { texto: "Ausente",     classe: "estado-ausente" },
+      4:              { texto: "Zumbi",       classe: "estado-ausente" },
+      5:              { texto: "Quer trocar", classe: "estado-online" },
+      6:              { texto: "Quer jogar",  classe: "estado-online" },
+      online:         { texto: "Online",      classe: "estado-online" },
+      busy:           { texto: "Ocupado",     classe: "estado-ocupado" },
+      away:           { texto: "Ausente",     classe: "estado-ausente" },
+      snooze:         { texto: "Zumbi",       classe: "estado-ausente" },
+      lookingtotrade: { texto: "Quer trocar", classe: "estado-online" },
+      lookingtoplay:  { texto: "Quer jogar",  classe: "estado-online" }
+    };
+
+    async function carregarSteam() {
+      const card = document.getElementById("card-steam");
+      if (!card) return;
+      try {
+        // "?t=" evita que o navegador use cache do arquivo antigo
+        const resposta = await fetch("steam.json?t=" + Date.now());
+        if (!resposta.ok) throw new Error("HTTP " + resposta.status);
+        const p = await resposta.json();
+
+        const estado = ESTADO_STEAM[p.onlineState] || ESTADO_STEAM[0];
+        let html = "";
+
+        // cabeçalho: avatar + nome + estado
+        html += '<div class="steam-cabecalho">';
+        html += '<img class="steam-avatar" src="' + p.avatarFull + '" alt="avatar da Steam">';
+        html += "<div>";
+        html += '<div class="steam-nome">' + p.steamID + "</div>";
+        html += '<div class="steam-status"><span class="' + estado.classe + '">' + estado.texto +
+                "</span> · " + (p.stateMessage || "") + "</div>";
+        html += "</div></div>";
+
+        // informações do perfil
+        html += '<div class="steam-info">';
+        if (p.memberSince) html += "<span>Membro desde: <b>" + p.memberSince + "</b></span>";
+        if (p.location)    html += "<span>Local: <b>" + p.location + "</b></span>";
+        if (p.realname && p.realname !== p.steamID)
+          html += "<span>Nome real: <b>" + p.realname + "</b></span>";
+        html += "</div>";
+
+        // resumo do perfil
+        if (p.summary) html += '<div class="steam-resumo">"' + p.summary + '"</div>';
+
+        // jogando agora (só se estiver em algum jogo)
+        if (p.gameName) {
+          html += '<div class="steam-jogando">';
+          if (p.gameIcon) html += '<img src="' + p.gameIcon + '" width="32" height="32" alt="">';
+          html += "<div>";
+          html += '<div class="rotulo-steam">Jogando agora</div>';
+          html += '<a href="' + p.gameLink + '" target="_blank" rel="noopener">' + p.gameName + "</a>";
+          if (p.hoursPlayed && p.hoursPlayed !== "0.0")
+            html += '<span class="horas"> · ' + p.hoursPlayed + "h nas últimas 2 semanas</span>";
+          html += "</div></div>";
+        }
+
+        // jogos jogados recentemente
+        if (p.jogos && p.jogos.length) {
+          html += '<div class="steam-jogos"><div class="rotulo-steam">Jogados recentemente</div>';
+          p.jogos.forEach(function (j) {
+            html += '<div class="steam-jogo"><span>' + j.nome + '</span><span class="horas">' + j.horas + "h</span></div>";
+          });
+          html += "</div>";
+        }
+
+        // quando os dados foram atualizados pelo bot
+        if (p.atualizadoEm) {
+          html += '<div class="steam-update">// dados atualizados em ' +
+                  p.atualizadoEm.replace("T", " ").slice(0, 16) + " UTC</div>";
+        }
+        card.innerHTML = html;
+      } catch (e) {
+        card.innerHTML = '<div class="steam-erro">// não foi possível carregar o perfil da Steam</div>';
+      }
+    }
+    carregarSteam();
+    setInterval(carregarSteam, 300000);   // re-checa a cada 5 minutos
   </script>
 </body>
 </html>
