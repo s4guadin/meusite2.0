@@ -555,33 +555,10 @@
           <div class="linha resp ok oculta">> em execução... 0 erros, 0 avisos</div>
         </div>
 
-        <!-- Redes sociais / presença em cards -->
+        <!-- Card do Discord (presença em tempo real) -->
         <h2>Redes</h2>
-        <div class="grid-links">
-          <a class="link-grande" href="https://www.youtube.com/@Kridex001" target="_blank" rel="noopener">
-            <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="1" y="4" width="22" height="16" fill="#111" stroke="#ff0000" stroke-width="2"/>
-              <polygon points="10,8 17,12 10,16" fill="#ff0000"/>
-            </svg>
-            <div>
-              <div class="rotulo">canal</div>
-              <div class="valor">youtube.com/@Kridex001</div>
-            </div>
-          </a>
-          <a class="link-grande" href="https://steamcommunity.com/id/saguadin038/" target="_blank" rel="noopener">
-            <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="7" fill="none" stroke="#8a8a8a" stroke-width="2"/>
-              <rect x="17" y="13" width="6" height="6" fill="#8a8a8a" transform="rotate(45 20 16)"/>
-              <circle cx="9" cy="11" r="2.5" fill="#8a8a8a"/>
-            </svg>
-            <div>
-              <div class="rotulo">perfil</div>
-              <div class="valor">steamcommunity.com/id/saguadin038/</div>
-            </div>
-          </a>
-          <div class="card-discord">
-            <span class="carregando">consultando presença do Discord...</span>
-          </div>
+        <div class="card-discord">
+          <span class="carregando">consultando presença do Discord...</span>
         </div>
       </section>
 
@@ -821,25 +798,27 @@
       "Kotlin": "#a97bff"
     };
 
-    // Fallback: repositórios de exemplo caso a API não responda
+    // Fallback: usados apenas se a API do GitHub falhar (rate limit, etc.)
     const REPOS_FALLBACK = [
-      { nome: "meu-portfolio",  descricao: "Este site, feito em HTML/CSS/JS puro.", linguagem: "HTML", estrelas: 3, forks: 1 },
-      { nome: "coletor-moedas", descricao: "Jogo 2D de plataforma feito com pygame.", linguagem: "Python", estrelas: 5, forks: 0 },
-      { nome: "api-rest",       descricao: "API REST simples com autenticação JWT.", linguagem: "TypeScript", estrelas: 8, forks: 2 }
+      { name: "meusite2.0",       description: "Meu site pessoal estilo terminal/hacker.", language: "HTML", stargazers_count: 0, forks_count: 0 },
+      { name: "animeflix",        description: "Plataforma de streaming de animes.",        language: "JavaScript", stargazers_count: 0, forks_count: 0 },
+      { name: "meu-site-pessoal", description: "Versão anterior do meu site pessoal.",      language: "CSS", stargazers_count: 1, forks_count: 0 },
+      { name: "keys",             description: "Scripts e automações.",                     language: "Python", stargazers_count: 0, forks_count: 0 }
     ];
 
     function desenharRepo(repo) {
-      const cor = CORES_LINGUAGENS[repo.linguagem] || "#8a8a8a";
+      // campos usam os nomes da API do GitHub (em inglês)
+      const cor = CORES_LINGUAGENS[repo.language] || "#8a8a8a";
       const card = document.createElement("div");
       card.className = "card-repo";
       card.innerHTML =
-        '<a class="nome" href="https://github.com/' + CONFIG.GITHUB + '/' + repo.nome +
-        '" target="_blank" rel="noopener">' + repo.nome + "</a>" +
-        '<div class="desc">' + (repo.descricao || "(sem descrição)") + "</div>" +
+        '<a class="nome" href="' + (repo.html_url || "https://github.com/" + CONFIG.GITHUB + "/" + repo.name) +
+        '" target="_blank" rel="noopener">' + repo.name + "</a>" +
+        '<div class="desc">' + (repo.description || "(sem descrição)") + "</div>" +
         '<div class="meta">' +
-          '<span><span class="dot" style="background:' + cor + '"></span>' + (repo.linguagem || "-") + "</span>" +
-          "<span>★ " + (repo.estrelas || 0) + "</span>" +
-          "<span>fork " + (repo.forks || 0) + "</span>" +
+          '<span><span class="dot" style="background:' + cor + '"></span>' + (repo.language || "-") + "</span>" +
+          "<span>★ " + (repo.stargazers_count || 0) + "</span>" +
+          "<span>fork " + (repo.forks_count || 0) + "</span>" +
         "</div>";
       return card;
     }
