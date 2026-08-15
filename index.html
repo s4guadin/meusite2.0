@@ -114,16 +114,19 @@
     #cursor-personalizado .linha-h {
       position: absolute; left: 0; right: 0; top: 50%;
       height: 1px; background: var(--ciano);
+      box-shadow: 0 0 4px var(--ciano);
     }
     #cursor-personalizado .linha-v {
       position: absolute; top: 0; bottom: 0; left: 50%;
       width: 1px; background: var(--ciano);
+      box-shadow: 0 0 4px var(--ciano);
     }
     #cursor-personalizado .ponto {
       position: absolute; left: 50%; top: 50%;
       width: 4px; height: 4px;
       background: var(--verde);
       transform: translate(-50%, -50%);
+      box-shadow: 0 0 6px var(--verde);
     }
     /* Ao passar o mouse em elementos interativos, a mira cresce */
     #cursor-personalizado.crescendo {
@@ -176,6 +179,7 @@
       border: 1px solid var(--cinza);
       padding: 2px 10px;
       background: var(--preto);
+      text-shadow: 0 0 8px rgba(0,255,65,0.35);
     }
 
     /* ==========================================================
@@ -307,7 +311,7 @@
       border: 1px solid var(--verde);
       background: rgba(0,0,0,0.7);
       padding: 20px 22px;
-      box-shadow: 0 0 10px rgba(0,255,65,0.12); /* brilho sutil */
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35), 0 0 14px rgba(0,255,65,0.18); /* brilho sutil */
     }
     .card-discord .avatar {
       width: 84px; height: 84px;
@@ -370,10 +374,12 @@
       padding: 14px 16px;
       transition: box-shadow 0.12s linear, border-color 0.12s linear;
     }
-    /* Hover limpo: só muda a cor da borda */
+    /* Hover: leve elevação + brilho sutil */
     .card-repo:hover {
       border-color: var(--ciano);
       background: rgba(0,0,0,0.45);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35), 0 0 14px rgba(0,240,255,0.15);
+      transform: translateY(-2px);
     }
     .card-repo .nome {
       color: var(--ciano);
@@ -429,6 +435,8 @@
     .link-grande:hover {
       border-color: var(--ciano);
       background: rgba(0,0,0,0.45);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35), 0 0 14px rgba(0,240,255,0.15);
+      transform: translateY(-2px);
     }
     .link-grande .rotulo {
       font-size: 11px;
@@ -537,8 +545,63 @@
       main { padding: 24px 14px; }
       #pag-inicio h1 { font-size: 22px; }
       .link-grande { min-width: 100%; }
-      .card-discord { flex-direction: column; text-align: center; }
+      #card-discord { flex-direction: column; text-align: center; }
       .aba { padding: 8px 10px; font-size: 12px; }
+    }
+
+    /* ==========================================================
+       AJUSTES MODERNOS (mantendo a estética terminal)
+       ========================================================== */
+    /* cabeçalho (barra superior + abas) fica fixo ao rolar */
+    #cabecalho-fixo {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--preto-2);
+    }
+
+    /* transições suaves em elementos interativos */
+    .aba,
+    .card-repo,
+    .link-grande,
+    #link-perfil,
+    .card-discord {
+      transition: border-color 0.2s ease, background 0.2s ease,
+                  box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    /* profundidade leve nos painéis (moderno, sem brilho colorido) */
+    #terminal-boot,
+    #apresentacao,
+    #card-steam,
+    .card-repo,
+    .link-grande {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    }
+
+    /* aba ativa com brilho sutil no texto */
+    .aba.ativa { text-shadow: 0 0 8px rgba(0,255,65,0.35); }
+
+    /* fade ao trocar de aba e ao carregar (SPA) */
+    .pagina.ativa { animation: fadeSubir 0.25s ease; }
+    main { animation: fadeSubir 0.4s ease; }
+    @keyframes fadeSubir {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* foco visível para acessibilidade (moderno) */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--ciano);
+      outline-offset: 2px;
+    }
+
+    /* respeita quem prefere menos movimento/brilho */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -559,6 +622,9 @@
   </div>
 
   <div id="wrapper">
+
+    <!-- CABEÇALHO FIXO (barra superior + abas, gruda no topo ao rolar) -->
+    <div id="cabecalho-fixo">
 
     <!-- BARRA SUPERIOR: controles + caminho do arquivo + relógio -->
     <header id="barra-superior">
@@ -584,6 +650,8 @@
       <button class="aba" data-pagina="pag-steam"><span class="icone">□</span>Steam<span class="fechar">×</span></button>
       <button class="aba" data-pagina="pag-discord"><span class="icone">◉</span>Discord<span class="fechar">×</span></button>
     </nav>
+
+    </div><!-- /cabecalho-fixo -->
 
     <!-- CONTEÚDO (SPA) -->
     <main>
@@ -923,7 +991,7 @@
       // usuário offline → o Lanyard não retorna atividades, então usa status
       if (!membro) {
         card.innerHTML =
-          '<div class="status"><span class="bolinha" style="background:#8a8a8a"></span>Offline</div>';
+          '<div class="status"><span class="bolinha" style="background:#8a8a8a;box-shadow:0 0 6px #8a8a8a"></span>Offline</div>';
         return;
       }
       // se o hash mudar quando a foto for trocada no Discord,
@@ -939,7 +1007,8 @@
         '<img class="avatar" src="' + avatar + '" alt="avatar do Discord">' +
         "<div>" +
           '<div class="nome">' + nome + "</div>" +
-          '<div class="status"><span class="bolinha" style="background:' + st.cor + '"></span>' + st.texto + "</div>" +
+          '<div class="status"><span class="bolinha" style="background:' + st.cor + ";box-shadow:0 0 6px " + st.cor +
+          '"></span>' + st.texto + "</div>" +
         "</div>";
     }
 
