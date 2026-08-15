@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  SITE PESSOAL — ESTÉTICA TERMINAL / HACKER
+  ------------------------------------------------------------
+  ARQUIVO ÚNICO: tudo (HTML + CSS + JS) em index.html
+  COMO PERSONALIZAR: procure o bloco "CONFIG" no <script>
+  no final do arquivo e troque os valores "[SEU ...]".
+  ============================================================
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>saguas@terminal:~$</title>
+
+  <!-- Favicon simples (retângulo verde com borda) via data URI -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%230a0a0a'/><rect x='3' y='3' width='10' height='10' fill='none' stroke='%2300ff41'/></svg>">
+
+  <!-- Fonte monoespaçada (com fallback para Courier New) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       VARIÁVEIS DE COR — tema escuro absoluto + verde neon
+       ========================================================== */
+    :root {
+      --preto:      #0a0a0a;   /* fundo principal */
+      --preto-2:    #111111;   /* painéis */
+      --verde:      #00ff41;   /* verde neon principal */
+      --ciano:      #00f0ff;   /* destaque secundário */
+      --branco:     #e6e6e6;   /* texto claro */
+      --cinza:      #2a2a2a;   /* bordas / divisores */
+      --cinza-txt:  #8a8a8a;   /* texto secundário */
+    }
+
+    /* Reset básico + cursor do mouse escondido (substituído por um
+       cursor personalizado desenhado em JS no final da página) */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: none;                       /* esconde o cursor nativo */
+      border-radius: 0px !important;      /* NADA de cantos arredondados */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--preto);
+      color: var(--branco);
+      font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--verde);
+      color: var(--preto);
+    }
+
+    /* Barra de rolagem estilizada (opcional, só para Firefox/Safari)
+       Webkit usa a rolagem padrão mesmo. */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--preto); }
+    ::-webkit-scrollbar-thumb { background: var(--cinza); border: 1px solid var(--verde); }
+
+    /* ==========================================================
+       FUNDO: chuva de código estilo Matrix (canvas animado)
+       O canvas fica FIXO atrás de tudo com opacidade baixa.
+       ========================================================== */
+    #bg-matrix {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 0;
+      opacity: 0.22;               /* baixa opacidade p/ não atrapalhar leitura */
+    }
+
+    /* ==========================================================
+       SCANLINES: linhas horizontais de CRT sobre a tela inteira
+       ========================================================== */
+    #scanlines {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 100;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0)    0px,
+        rgba(0,0,0,0)    2px,
+        rgba(0,0,0,0.22) 2px,
+        rgba(0,0,0,0.22) 4px
+      );
+      animation: flicker 4s infinite steps(60);
+    }
+
+    /* Flicker sutil de CRT */
+    @keyframes flicker {
+      0%   { opacity: 1; }
+      50%  { opacity: 0.96; }
+      100% { opacity: 1; }
+    }
+
+    /* ==========================================================
+       CURSOR PERSONALIZADO (mira neon desenhada em JS)
+       ========================================================== */
+    #cursor-personalizado {
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 200;
+      width: 22px; height: 22px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s linear;
+    }
+    #cursor-personalizado .linha-h {
+      position: absolute; left: 0; right: 0; top: 50%;
+      height: 1px; background: var(--ciano);
+      box-shadow: 0 0 6px var(--ciano);
+    }
+    #cursor-personalizado .linha-v {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      width: 1px; background: var(--ciano);
+      box-shadow: 0 0 6px var(--ciano);
+    }
+    #cursor-personalizado .ponto {
+      position: absolute; left: 50%; top: 50%;
+      width: 4px; height: 4px;
+      background: var(--verde);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 8px var(--verde);
+    }
+    /* Ao passar o mouse em elementos interativos, a mira cresce */
+    #cursor-personalizado.crescendo {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    /* ==========================================================
+       CAMADA DE CONTEÚDO (acima do fundo, abaixo das scanlines)
+       ========================================================== */
+    #wrapper {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==========================================================
+       BARRA SUPERIOR (título + relógio HH:MM:SS)
+       ========================================================== */
+    header#barra-superior {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--cinza);
+      background: var(--preto-2);
+      font-size: 13px;
+    }
+    /* Botõezinhos de janela (decorativos, como um editor de código) */
+    #janela-controles { display: flex; gap: 6px; }
+    #janela-controles span {
+      display: inline-block;
+      width: 12px; height: 12px;
+      border: 1px solid var(--cinza-txt);
+    }
+    #janela-controles span.verde  { background: var(--verde); border-color: var(--verde); }
+    #janela-controles span.ciano  { background: var(--ciano); border-color: var(--ciano); }
+    #janela-controles span.cinza  { background: var(--cinza); }
+
+    #caminho-arquivo { color: var(--cinza-txt); }
+    #caminho-arquivo b { color: var(--branco); font-weight: 400; }
+    #caminho-arquivo .seta { color: var(--verde); }
+
+    /* Relógio digital no canto superior direito, estilo terminal */
+    #relogio {
+      color: var(--verde);
+      letter-spacing: 2px;
+      border: 1px solid var(--cinza);
+      padding: 2px 10px;
+      background: var(--preto);
+      box-shadow: 2px 2px 0 var(--cinza);
+    }
+
+    /* ==========================================================
+       ABA DE NAVEGAÇÃO (estilo IDE — como abas de arquivos do VS Code)
+       ========================================================== */
+    nav#abas {
+      display: flex;
+      border-bottom: 2px solid var(--verde);
+      background: var(--preto-2);
+      overflow-x: auto;
+    }
+    .aba {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: transparent;
+      border: none;
+      border-right: 1px solid var(--cinza);
+      border-top: 2px solid transparent;
+      color: var(--cinza-txt);
+      font-family: inherit;
+      font-size: 13px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .aba .icone { color: var(--verde); }
+    .aba .fechar { color: var(--cinza-txt); opacity: 0.6; }
+    .aba:hover { color: var(--branco); background: #161616; }
+    /* Aba ativa: topo verde + fundo mais claro (estilo aba aberta) */
+    .aba.ativa {
+      background: var(--preto);
+      color: var(--verde);
+      border-top: 2px solid var(--verde);
+    }
+    .aba.ativa .fechar { opacity: 1; }
+
+    /* ==========================================================
+       ÁREA DE CONTEÚDO (SPA — só uma seção visível por vez)
+       ========================================================== */
+    main {
+      flex: 1;
+      padding: 40px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .pagina { display: none; }
+    .pagina.ativa { display: block; }
+
+    /* Cabeçalhos com risco de "seletor de linha" */
+    h2 {
+      color: var(--verde);
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--cinza);
+    }
+    h2::before { content: ">> "; color: var(--ciano); }
+
+    /* ==========================================================
+       SEÇÃO INÍCIO
+       ========================================================== */
+    #pag-inicio h1 {
+      font-size: 34px;
+      color: var(--branco);
+      margin: 16px 0 8px;
+      letter-spacing: 3px;
+    }
+    #pag-inicio h1 .cifrao { color: var(--verde); }
+
+    /* Sub-título digitado pela máquina de escrever (com cursor piscante) */
+    #sub-titulo {
+      color: var(--ciano);
+      font-size: 18px;
+      min-height: 28px;
+      margin-bottom: 12px;
+    }
+    #cursor-digitacao {
+      display: inline-block;
+      width: 10px;
+      height: 18px;
+      background: var(--verde);
+      vertical-align: middle;
+      animation: piscar 1s steps(2) infinite;
+    }
+    @keyframes piscar { 50% { opacity: 0; } }
+
+    #frase-efeito { color: var(--cinza-txt); margin-bottom: 30px; }
+
+    /* Bloco estilo terminal na home */
+    #terminal-boot {
+      background: var(--preto-2);
+      border: 1px solid var(--verde);
+      padding: 16px 18px;
+      font-size: 13px;
+      box-shadow: 5px 5px 0 rgba(0,255,65,0.15);
+    }
+    #terminal-boot .barra-terminal {
+      display: flex; justify-content: space-between;
+      color: var(--cinza-txt);
+      border-bottom: 1px solid var(--cinza);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+    #terminal-boot .linha { color: var(--branco); white-space: pre-wrap; }
+    #terminal-boot .linha .prompt { color: var(--verde); }
+    #terminal-boot .linha .resp  { color: var(--cinza-txt); }
+    #terminal-boot .linha .ok    { color: var(--ciano); }
+    #terminal-boot .linha.oculta { display: none; }
+
+    /* ==========================================================
+       SEÇÃO PROJETOS (cards de repositórios do GitHub)
+       ========================================================== */
+    #lista-repos {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .card-repo {
+      border: 1px solid var(--verde);
+      background: rgba(0,0,0,0.65);
+      padding: 14px 16px;
+      transition: box-shadow 0.12s linear, border-color 0.12s linear;
+    }
+    /* Hover com sombra HARD (deslocada), sem desfoque "bonitinho" */
+    .card-repo:hover {
+      border-color: var(--ciano);
+      box-shadow: 4px 4px 0 var(--ciano);
+    }
+    .card-repo .nome {
+      color: var(--ciano);
+      font-size: 15px;
+      text-decoration: none;
+    }
+    .card-repo .nome::before { content: "./"; color: var(--verde); }
+    .card-repo .nome:hover { color: var(--verde); }
+    .card-repo .desc { color: var(--cinza-txt); font-size: 13px; margin: 6px 0; }
+    .card-repo .meta {
+      display: flex; gap: 18px;
+      font-size: 12px; color: var(--branco);
+    }
+    .card-repo .meta .dot {
+      display: inline-block;
+      width: 9px; height: 9px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    #erro-github { color: var(--ciano); font-size: 13px; }
+    #link-perfil {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--verde);
+      text-decoration: none;
+      border: 1px solid var(--verde);
+      padding: 8px 14px;
+      box-shadow: 3px 3px 0 var(--verde);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    #link-perfil:hover { background: var(--verde); color: var(--preto); }
+
+    /* ==========================================================
+       SEÇÕES YOUTUBE E STEAM (cards de link)
+       ========================================================== */
+    .grid-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .link-grande {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid var(--verde);
+      background: rgba(0,0,0,0.65);
+      padding: 18px 22px;
+      text-decoration: none;
+      color: var(--branco);
+      min-width: 260px;
+      transition: box-shadow 0.12s linear, border-color 0.12s linear;
+    }
+    .link-grande:hover {
+      border-color: var(--ciano);
+      box-shadow: 4px 4px 0 var(--ciano);
+    }
+    .link-grande .rotulo {
+      font-size: 11px;
+      color: var(--cinza-txt);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .link-grande .valor { font-size: 15px; color: var(--ciano); }
+    .link-grande svg { flex-shrink: 0; }
+
+    /* ==========================================================
+       BARRA DE STATUS INFERIOR (estilo VS Code)
+       ========================================================== */
+    footer#barra-status {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 5px 16px;
+      background: var(--verde);
+      color: var(--preto);
+      font-size: 11px;
+      letter-spacing: 1px;
+      border-top: 1px solid var(--preto);
+      flex-wrap: wrap;
+    }
+    footer#barra-status .esq, footer#barra-status .dir { display: flex; gap: 14px; }
+
+    /* Responsivo básico (celular) */
+    @media (max-width: 600px) {
+      main { padding: 24px 14px; }
+      #pag-inicio h1 { font-size: 22px; }
+      .link-grande { min-width: 100%; }
+      .aba { padding: 8px 10px; font-size: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Canvas do fundo (chuva Matrix) -->
+  <canvas id="bg-matrix"></canvas>
+
+  <!-- Scanlines de CRT sobre tudo -->
+  <div id="scanlines"></div>
+
+  <!-- Cursor personalizado (preenchido pelo JS) -->
+  <div id="cursor-personalizado" aria-hidden="true">
+    <div class="linha-h"></div>
+    <div class="linha-v"></div>
+    <div class="ponto"></div>
+  </div>
+
+  <div id="wrapper">
+
+    <!-- BARRA SUPERIOR: controles + caminho do arquivo + relógio -->
+    <header id="barra-superior">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div id="janela-controles" aria-hidden="true">
+          <span class="verde"></span>
+          <span class="ciano"></span>
+          <span class="cinza"></span>
+        </div>
+        <div id="caminho-arquivo">
+          saguas <span class="seta">→</span> <b>~/index.html</b> — 100%
+        </div>
+      </div>
+      <!-- Relógio HH:MM:SS no canto superior direito -->
+      <div id="relogio" title="hora do sistema">--:--:--</div>
+    </header>
+
+    <!-- NAVEGAÇÃO: abas no estilo IDE -->
+    <nav id="abas">
+      <button class="aba ativa" data-pagina="pag-inicio"><span class="icone">&lt;/&gt;</span>Início<span class="fechar">×</span></button>
+      <button class="aba" data-pagina="pag-projetos"><span class="icone">#</span>Projetos<span class="fechar">×</span></button>
+      <button class="aba" data-pagina="pag-youtube"><span class="icone">▷</span>YouTube<span class="fechar">×</span></button>
+      <button class="aba" data-pagina="pag-steam"><span class="icone">□</span>Steam<span class="fechar">×</span></button>
+    </nav>
+
+    <!-- CONTEÚDO (SPA) -->
+    <main>
+
+      <!-- ============ SEÇÃO INÍCIO ============ -->
+      <section id="pag-inicio" class="pagina ativa">
+        <h1><span class="cifrao">$</span>&gt; [SEU NOME]</h1>
+
+        <!-- Sub-título digitado pela máquina de escrever -->
+        <div id="sub-titulo"><span id="texto-digitado"></span><span id="cursor-digitacao"></span></div>
+
+        <p id="frase-efeito">// Transformando cafeína em código desde o primeiro commit.</p>
+
+        <!-- Mini terminal com linhas que aparecem em sequência -->
+        <div id="terminal-boot">
+          <div class="barra-terminal"><span>bash — saguas@localhost: ~</span><span>OK</span></div>
+          <div class="linha"><span class="prompt">$</span> whoami</div>
+          <div class="linha resp oculta">[SEU NOME]</div>
+          <div class="linha"><span class="prompt">$</span> cat ~/skills.txt</div>
+          <div class="linha resp oculta">- Full-Stack // front-end, back-end, banco de dados</div>
+          <div class="linha resp oculta">- Jogos 2D // pygame, canvas, lógica de jogo</div>
+          <div class="linha resp oculta">- Automação // scripts, APIs, bots</div>
+          <div class="linha"><span class="prompt">$</span> npm run vida -- --modo produtivo</div>
+          <div class="linha resp ok oculta">> em execução... 0 erros, 0 avisos</div>
+        </div>
+      </section>
+
+      <!-- ============ SEÇÃO PROJETOS (GitHub API) ============ -->
+      <section id="pag-projetos" class="pagina">
+        <h2>Projetos — GitHub</h2>
+        <div id="lista-repos"><span class="ok">carregando repositórios...</span></div>
+        <div id="erro-github"></div>
+        <a id="link-perfil" href="https://github.com/[SEU_USERNAME]" target="_blank" rel="noopener">→ ver perfil completo</a>
+      </section>
+
+      <!-- ============ SEÇÃO YOUTUBE ============ -->
+      <section id="pag-youtube" class="pagina">
+        <h2>YouTube</h2>
+        <div class="grid-links">
+          <a class="link-grande" href="https://youtube.com/@[SEU_CANAL]" target="_blank" rel="noopener">
+            <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="1" y="4" width="22" height="16" fill="#111" stroke="#ff0000" stroke-width="2"/>
+              <polygon points="10,8 17,12 10,16" fill="#ff0000"/>
+            </svg>
+            <div>
+              <div class="rotulo">canal</div>
+              <div class="valor">youtube.com/@[SEU_CANAL]</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============ SEÇÃO STEAM ============ -->
+      <section id="pag-steam" class="pagina">
+        <h2>Steam</h2>
+        <div class="grid-links">
+          <a class="link-grande" href="https://steamcommunity.com/id/[SEU_ID]" target="_blank" rel="noopener">
+            <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="7" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+              <rect x="17" y="13" width="6" height="6" fill="#8a8a8a" transform="rotate(45 20 16)"/>
+              <circle cx="9" cy="11" r="2.5" fill="#8a8a8a"/>
+            </svg>
+            <div>
+              <div class="rotulo">perfil</div>
+              <div class="valor">steamcommunity.com/id/[SEU_ID]</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- BARRA DE STATUS INFERIOR -->
+    <footer id="barra-status">
+      <div class="esq">
+        <span>{ } main*</span>
+        <span>Ln 1, Col 1</span>
+      </div>
+      <div class="dir">
+        <span>UTF-8</span>
+        <span>Espaços: 2</span>
+        <span>Bash</span>
+        <span>80x24</span>
+      </div>
+    </footer>
+
+  </div><!-- /wrapper -->
+
+  <script>
+    /* ==========================================================
+       CONFIGURAÇÃO — EDITE AQUI OS SEUS DADOS
+       ========================================================== */
+    const CONFIG = {
+      NOME:       "[SEU NOME]",            // seu nome exibido na home
+      GITHUB:     "[SEU_USERNAME]",        // usuário do GitHub (API)
+      YOUTUBE:    "https://youtube.com/@[SEU_CANAL]",
+      STEAM:      "https://steamcommunity.com/id/[SEU_ID]"
+    };
+
+    /* Troca os placeholders fixos no HTML pelos valores do CONFIG.
+       (Troca em atributos href e também no texto visível.) */
+    document.querySelectorAll("a").forEach(function (a) {
+      a.href = a.href.replace("[SEU_USERNAME]", CONFIG.GITHUB)
+                     .replace("[SEU_CANAL]", CONFIG.YOUTUBE.split("@")[1] || "[SEU_CANAL]")
+                     .replace("[SEU_ID]", CONFIG.STEAM.split("/").pop());
+    });
+    document.querySelectorAll("h1, h2, .resp").forEach(function (el) {
+      el.innerHTML = el.innerHTML.replaceAll("[SEU NOME]", CONFIG.NOME);
+    });
+
+    /* ==========================================================
+       1) RELÓGIO DIGITAL (HH:MM:SS) no canto superior direito
+       ========================================================== */
+    const elRelogio = document.getElementById("relogio");
+    function atualizarRelogio() {
+      const agora = new Date();
+      const hh = String(agora.getHours()).padStart(2, "0");
+      const mm = String(agora.getMinutes()).padStart(2, "0");
+      const ss = String(agora.getSeconds()).padStart(2, "0");
+      elRelogio.textContent = hh + ":" + mm + ":" + ss;
+    }
+    atualizarRelogio();
+    setInterval(atualizarRelogio, 1000);
+
+    /* ==========================================================
+       2) FUNDO: chuva de código estilo Matrix
+       ========================================================== */
+    const canvas = document.getElementById("bg-matrix");
+    const ctx = canvas.getContext("2d");
+    const CARACTERES = "アイウエオカキクケコサシスセソタチツテト0123456789#$%&/\\<>{}[]=+*;:,._-ABCDEF";
+    const TAM_FONTE = 16;
+    let gotas = [];
+
+    function ajustarCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const colunas = Math.floor(canvas.width / TAM_FONTE);
+      gotas = new Array(colunas).fill(0).map(function () {
+        return Math.random() * -canvas.height;   // gotas começam fora da tela
+      });
+    }
+
+    function desenharMatrix() {
+      // escurece levemente o que já foi desenhado (efeito de rastro)
+      ctx.fillStyle = "rgba(10,10,10,0.06)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#00ff41";
+      ctx.font = TAM_FONTE + "px 'Courier New'";
+
+      for (let i = 0; i < gotas.length; i++) {
+        const letra = CARACTERES[Math.floor(Math.random() * CARACTERES.length)];
+        ctx.fillText(letra, i * TAM_FONTE, gotas[i]);
+        gotas[i] += TAM_FONTE;
+        // quando a gota sai da tela, com pouca chance ela recomeça (chão infinito)
+        if (gotas[i] > canvas.height && Math.random() > 0.975) gotas[i] = 0;
+      }
+      requestAnimationFrame(desenharMatrix);
+    }
+
+    window.addEventListener("resize", ajustarCanvas);
+    ajustarCanvas();
+    desenharMatrix();
+
+    /* ==========================================================
+       3) CURSOR PERSONALIZADO (mira neon que segue o mouse)
+       ========================================================== */
+    const cursorEl = document.getElementById("cursor-personalizado");
+    let mouseX = -50, mouseY = -50;
+
+    document.addEventListener("mousemove", function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorEl.style.left = mouseX + "px";
+      cursorEl.style.top  = mouseY + "px";
+    });
+
+    // cresce a mira ao passar sobre elementos interativos
+    document.addEventListener("mouseover", function (e) {
+      const interativo = e.target.closest("a, button, .aba");
+      cursorEl.classList.toggle("crescendo", !!interativo);
+    });
+    // esconde a mira quando o mouse sai da janela
+    document.addEventListener("mouseleave", function () {
+      cursorEl.style.display = "none";
+    });
+    document.addEventListener("mouseenter", function () {
+      cursorEl.style.display = "block";
+    });
+
+    /* ==========================================================
+       4) NAVEGAÇÃO POR ABAS (SPA sem recarregar a página)
+       ========================================================== */
+    const abas = document.querySelectorAll(".aba");
+    const paginas = document.querySelectorAll(".pagina");
+
+    abas.forEach(function (aba) {
+      aba.addEventListener("click", function () {
+        // marca a aba clicada como ativa
+        abas.forEach(function (a) { a.classList.remove("ativa"); });
+        aba.classList.add("ativa");
+        // mostra somente a página correspondente
+        const alvo = aba.getAttribute("data-pagina");
+        paginas.forEach(function (pag) {
+          pag.classList.toggle("ativa", pag.id === alvo);
+        });
+      });
+    });
+
+    /* ==========================================================
+       5) EFEITO MÁQUINA DE ESCREVER no sub-título
+       ========================================================== */
+    const FRASES = [
+      "Desenvolvedor Full-Stack",
+      "Programador",
+      "Apaixonado por código limpo"
+    ];
+    const elTexto = document.getElementById("texto-digitado");
+    let fraseAtual = 0, idx = 0, apagando = false;
+
+    function digitar() {
+      const frase = FRASES[fraseAtual];
+      if (!apagando) {
+        idx++;
+        elTexto.textContent = frase.slice(0, idx);
+        if (idx === frase.length) { apagando = true; setTimeout(digitar, 1800); return; }
+        setTimeout(digitar, 70);
+      } else {
+        idx--;
+        elTexto.textContent = frase.slice(0, idx);
+        if (idx === 0) {
+          apagando = false;
+          fraseAtual = (fraseAtual + 1) % FRASES.length;
+          setTimeout(digitar, 300);
+          return;
+        }
+        setTimeout(digitar, 35);
+      }
+    }
+    digitar();
+
+    /* ==========================================================
+       6) TERMINAL DA HOME: revela as respostas em sequência
+       ========================================================== */
+    const linhasOcultas = document.querySelectorAll("#terminal-boot .oculta");
+    let linhaAtual = 0;
+    const intervaloTerminal = setInterval(function () {
+      if (linhaAtual >= linhasOcultas.length) { clearInterval(intervaloTerminal); return; }
+      linhasOcultas[linhaAtual].style.display = "block";
+      linhaAtual++;
+    }, 500);
+
+    /* ==========================================================
+       7) PROJETOS: consome a API pública do GitHub
+       ----------------------------------------------------------
+       Se a API falhar (limite, sem internet, usuário errado), o
+       site mostra um fallback com links estáticos de exemplo.
+       ========================================================== */
+    const CORES_LINGUAGENS = {
+      "JavaScript": "#f1e05a", "TypeScript": "#3178c6", "Python": "#3572a5",
+      "HTML": "#e34c26", "CSS": "#563d7c", "Lua": "#000080", "C": "#555555",
+      "C++": "#f34b7d", "Java": "#b07219", "PHP": "#4f5d95", "Rust": "#dea584",
+      "Go": "#00add8", "Shell": "#89e051", "C#": "#178600", "Dart": "#00b4ab",
+      "Kotlin": "#a97bff"
+    };
+
+    // Fallback: repositórios de exemplo caso a API não responda
+    const REPOS_FALLBACK = [
+      { nome: "meu-portfolio",  descricao: "Este site, feito em HTML/CSS/JS puro.", linguagem: "HTML", estrelas: 3, forks: 1 },
+      { nome: "coletor-moedas", descricao: "Jogo 2D de plataforma feito com pygame.", linguagem: "Python", estrelas: 5, forks: 0 },
+      { nome: "api-rest",       descricao: "API REST simples com autenticação JWT.", linguagem: "TypeScript", estrelas: 8, forks: 2 }
+    ];
+
+    function desenharRepo(repo) {
+      const cor = CORES_LINGUAGENS[repo.linguagem] || "#8a8a8a";
+      const card = document.createElement("div");
+      card.className = "card-repo";
+      card.innerHTML =
+        '<a class="nome" href="https://github.com/' + CONFIG.GITHUB + '/' + repo.nome +
+        '" target="_blank" rel="noopener">' + repo.nome + "</a>" +
+        '<div class="desc">' + (repo.descricao || "(sem descrição)") + "</div>" +
+        '<div class="meta">' +
+          '<span><span class="dot" style="background:' + cor + '"></span>' + (repo.linguagem || "-") + "</span>" +
+          "<span>★ " + (repo.estrelas || 0) + "</span>" +
+          "<span>fork " + (repo.forks || 0) + "</span>" +
+        "</div>";
+      return card;
+    }
+
+    async function carregarRepos() {
+      const lista = document.getElementById("lista-repos");
+      const erro = document.getElementById("erro-github");
+      try {
+        const resposta = await fetch(
+          "https://api.github.com/users/" + CONFIG.GITHUB + "/repos?sort=updated&per_page=6"
+        );
+        if (!resposta.ok) throw new Error("HTTP " + resposta.status);
+
+        const repos = await resposta.json();
+        lista.innerHTML = "";                          // limpa o "carregando..."
+        repos.forEach(function (repo) {                // mostra até 6 repositórios
+          lista.appendChild(desenharRepo(repo));
+        });
+      } catch (e) {
+        // FALHA NA API → mostra o fallback com links estáticos
+        lista.innerHTML = "";
+        erro.textContent = "// API do GitHub indisponível — exibindo repositórios de exemplo:";
+        REPOS_FALLBACK.forEach(function (repo) {
+          lista.appendChild(desenharRepo(repo));
+        });
+      }
+    }
+    carregarRepos();
+  </script>
+</body>
+</html>
