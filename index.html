@@ -580,7 +580,7 @@
             </div>
           </a>
           <div class="card-discord">
-            <span class="carregando">consultando widget do servidor...</span>
+            <span class="carregando">consultando presença do Discord...</span>
           </div>
         </div>
       </section>
@@ -632,7 +632,7 @@
       <section id="pag-discord" class="pagina">
         <h2>Discord — Presença</h2>
         <div class="card-discord">
-          <span class="carregando">consultando widget do servidor...</span>
+          <span class="carregando">consultando presença do Discord...</span>
         </div>
       </section>
 
@@ -663,8 +663,7 @@
       GITHUB:     "s4guadin",                        // usuário do GitHub (API)
       YOUTUBE:    "https://www.youtube.com/@Kridex001",
       STEAM:      "https://steamcommunity.com/id/saguadin038/",
-      DISCORD_SERVER: "799878365796106260",          // ID numérico do servidor Discord
-      DISCORD_USER:   "714914940535832676"           // seu ID numérico de usuário no Discord
+      DISCORD_USER:   "714914940535832676"           // seu ID numérico de usuário no Discord (Lanyard)
     };
 
     /* ==========================================================
@@ -871,10 +870,12 @@
     carregarRepos();
 
     /* ==========================================================
-       8) DISCORD: card com presença em tempo real (Widget API)
+       8) DISCORD: card com presença em tempo real
        ----------------------------------------------------------
-       Usa o widget público do servidor. Para funcionar, ative em
-       Server Settings → Widget no Discord. Atualiza a cada 60s.
+       Usa a API pública do Lanyard (api.lanyard.rest) que mostra
+       o status REAL (online/idle/dnd/offline), sem depender do
+       widget do servidor. Para ativar, conecte sua conta uma vez
+       em lanyard.org. Atualiza a cada 60 segundos.
        ========================================================== */
     // cores dos círculos e textos por status (em português)
     const STATUS_DISCORD = {
@@ -886,7 +887,7 @@
 
     // desenha o card com avatar, nome e status
     function renderDiscord(card, membro) {
-      // usuário não está na lista do widget → está offline
+      // usuário offline → o Lanyard não retorna atividades, então usa status
       if (!membro) {
         card.innerHTML =
           '<div class="status"><span class="bolinha" style="background:#8a8a8a;box-shadow:0 0 8px #8a8a8a"></span>Offline</div>';
@@ -899,7 +900,8 @@
         ? "https://cdn.discordapp.com/avatars/" + membro.id + "/" + hash + ".png?size=128"
         : "https://cdn.discordapp.com/embed/avatars/" + (parseInt(membro.discriminator, 10) % 5) + ".png";
       const st = STATUS_DISCORD[membro.status] || STATUS_DISCORD.offline;
-      const nome = membro.username + "#" + membro.discriminator;
+      // mostra o nome global se existir, senão username#discriminator
+      const nome = membro.global_name || (membro.username + "#" + membro.discriminator);
       card.innerHTML =
         '<img class="avatar" src="' + avatar + '" alt="avatar do Discord">' +
         "<div>" +
@@ -920,25 +922,31 @@
         });
       };
 
-      // se os placeholders do CONFIG ainda não foram preenchidos
-      if (CONFIG.DISCORD_SERVER.indexOf("[") === 0 || CONFIG.DISCORD_USER.indexOf("[") === 0) {
-        renderErro("// configure DISCORD_SERVER e DISCORD_USER no bloco CONFIG do código.");
+      // se o placeholder do CONFIG ainda não foi preenchido
+      if (CONFIG.DISCORD_USER.indexOf("[") === 0) {
+        renderErro("// configure DISCORD_USER no bloco CONFIG do código.");
         return;
       }
       try {
         const resposta = await fetch(
-          "https://discord.com/api/guilds/" + CONFIG.DISCORD_SERVER + "/widget.json"
+          "https://api.lanyard.rest/v1/users/" + CONFIG.DISCORD_USER
         );
         if (!resposta.ok) throw new Error("HTTP " + resposta.status);
         const dados = await resposta.json();
-        // procura o seu usuário na lista de membros visíveis no widget
-        let membro = null;
-        (dados.members || []).forEach(function (m) {
-          if (m.id === CONFIG.DISCORD_USER) membro = m;
-        });
+        if (!dados || !dados.data) throw new Error("não conectado ao Lanyard");
+
+        const info = dados.data.discord_user;
+        const membro = {
+          id:            info.id,
+          username:      info.username,
+          discriminator: info.discriminator,
+          global_name:   info.global_name || info.display_name || null,
+          avatar:        info.avatar,
+          status:        dados.data.discord_status || "offline"
+        };
         cards.forEach(function (c) { renderDiscord(c, membro); });
       } catch (e) {
-        renderErro("// widget indisponível — ative em Configurações do servidor → Widget");
+        renderErro("// Lanyard indisponível — conecte sua conta em lanyard.org");
       }
     }
     carregarDiscord();
