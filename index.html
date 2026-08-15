@@ -310,7 +310,7 @@
     /* ==========================================================
        CARD DO DISCORD (presença em tempo real via Widget API)
        ========================================================== */
-    #card-discord {
+    .card-discord {
       display: flex;
       align-items: center;
       gap: 20px;
@@ -319,28 +319,28 @@
       padding: 20px 22px;
       box-shadow: 0 0 18px rgba(0,255,65,0.4);   /* brilho verde neon pedido */
     }
-    #card-discord .avatar {
+    .card-discord .avatar {
       width: 84px; height: 84px;
       border: 1px solid var(--verde);
       background: var(--preto-2);
       flex-shrink: 0;
     }
-    #card-discord .nome {
+    .card-discord .nome {
       font-size: 18px;
       color: var(--branco);
       margin-bottom: 8px;
       letter-spacing: 1px;
     }
-    #card-discord .nome::before { content: "@"; color: var(--verde); }
-    #card-discord .status {
+    .card-discord .nome::before { content: "@"; color: var(--verde); }
+    .card-discord .status {
       display: flex; align-items: center; gap: 8px;
       font-size: 14px; color: var(--branco);
     }
-    #card-discord .bolinha {
+    .card-discord .bolinha {
       display: inline-block;
       width: 12px; height: 12px;
     }
-    #card-discord .carregando, #card-discord .erro {
+    .card-discord .carregando, .card-discord .erro {
       color: var(--ciano); font-size: 13px;
     }
 
@@ -473,7 +473,7 @@
       main { padding: 24px 14px; }
       #pag-inicio h1 { font-size: 22px; }
       .link-grande { min-width: 100%; }
-      #card-discord { flex-direction: column; text-align: center; }
+      .card-discord { flex-direction: column; text-align: center; }
       .aba { padding: 8px 10px; font-size: 12px; }
     }
   </style>
@@ -554,6 +554,35 @@
           <div class="linha"><span class="prompt">$</span> npm run vida -- --modo produtivo</div>
           <div class="linha resp ok oculta">> em execução... 0 erros, 0 avisos</div>
         </div>
+
+        <!-- Redes sociais / presença em cards -->
+        <h2>Redes</h2>
+        <div class="grid-links">
+          <a class="link-grande" href="https://www.youtube.com/@Kridex001" target="_blank" rel="noopener">
+            <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="1" y="4" width="22" height="16" fill="#111" stroke="#ff0000" stroke-width="2"/>
+              <polygon points="10,8 17,12 10,16" fill="#ff0000"/>
+            </svg>
+            <div>
+              <div class="rotulo">canal</div>
+              <div class="valor">youtube.com/@Kridex001</div>
+            </div>
+          </a>
+          <a class="link-grande" href="https://steamcommunity.com/id/saguadin038/" target="_blank" rel="noopener">
+            <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="7" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+              <rect x="17" y="13" width="6" height="6" fill="#8a8a8a" transform="rotate(45 20 16)"/>
+              <circle cx="9" cy="11" r="2.5" fill="#8a8a8a"/>
+            </svg>
+            <div>
+              <div class="rotulo">perfil</div>
+              <div class="valor">steamcommunity.com/id/saguadin038/</div>
+            </div>
+          </a>
+          <div class="card-discord">
+            <span class="carregando">consultando widget do servidor...</span>
+          </div>
+        </div>
       </section>
 
       <!-- ============ SEÇÃO PROJETOS (GitHub API) ============ -->
@@ -602,7 +631,7 @@
       <!-- ============ SEÇÃO DISCORD (presença via Widget API) ============ -->
       <section id="pag-discord" class="pagina">
         <h2>Discord — Presença</h2>
-        <div id="card-discord">
+        <div class="card-discord">
           <span class="carregando">consultando widget do servidor...</span>
         </div>
       </section>
@@ -634,8 +663,8 @@
       GITHUB:     "s4guadin",                        // usuário do GitHub (API)
       YOUTUBE:    "https://www.youtube.com/@Kridex001",
       STEAM:      "https://steamcommunity.com/id/saguadin038/",
-      DISCORD_SERVER: "[SEU_SERVER_ID]",             // ID numérico do servidor Discord
-      DISCORD_USER:   "[SEU_USER_ID_DISCORD]"        // seu ID numérico de usuário no Discord
+      DISCORD_SERVER: "799878365796106260",          // ID numérico do servidor Discord
+      DISCORD_USER:   "714914940535832676"           // seu ID numérico de usuário no Discord
     };
 
     /* ==========================================================
@@ -881,11 +910,19 @@
     }
 
     async function carregarDiscord() {
-      const card = document.getElementById("card-discord");
+      // preenche TODOS os cards com a classe .card-discord (Início e aba Discord)
+      const cards = document.querySelectorAll(".card-discord");
+      if (cards.length === 0) return;
+
+      const renderErro = function (msg) {
+        cards.forEach(function (c) {
+          c.innerHTML = '<div class="erro">' + msg + "</div>";
+        });
+      };
+
       // se os placeholders do CONFIG ainda não foram preenchidos
       if (CONFIG.DISCORD_SERVER.indexOf("[") === 0 || CONFIG.DISCORD_USER.indexOf("[") === 0) {
-        card.innerHTML =
-          '<div class="erro">// configure DISCORD_SERVER e DISCORD_USER no bloco CONFIG do código.</div>';
+        renderErro("// configure DISCORD_SERVER e DISCORD_USER no bloco CONFIG do código.");
         return;
       }
       try {
@@ -899,10 +936,9 @@
         (dados.members || []).forEach(function (m) {
           if (m.id === CONFIG.DISCORD_USER) membro = m;
         });
-        renderDiscord(card, membro);
+        cards.forEach(function (c) { renderDiscord(c, membro); });
       } catch (e) {
-        card.innerHTML =
-          '<div class="erro">// widget indisponível — ative em Configurações do servidor → Widget</div>';
+        renderErro("// widget indisponível — ative em Configurações do servidor → Widget");
       }
     }
     carregarDiscord();
