@@ -278,6 +278,72 @@
 
     #frase-efeito { color: var(--cinza-txt); margin-bottom: 30px; }
 
+    /* ==========================================================
+       APRESENTAÇÃO (bloco "sobre mim" estilo código)
+       ========================================================== */
+    #apresentacao {
+      background: var(--preto-2);
+      border: 1px solid var(--cinza);
+      border-left: 3px solid var(--verde);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+    #apresentacao .linha-codigo {
+      color: var(--branco);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--cinza);
+    }
+    #apresentacao .linha-codigo .fn  { color: var(--ciano); }
+    #apresentacao .linha-codigo .str { color: var(--verde); }
+    #apresentacao p { color: var(--cinza-txt); margin-bottom: 12px; }
+    #apresentacao p:last-of-type { margin-bottom: 0; }
+    #apresentacao .hl { color: var(--verde); }
+    #apresentacao .status-linha {
+      color: var(--ciano);
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--cinza);
+    }
+
+    /* ==========================================================
+       CARD DO DISCORD (presença em tempo real via Widget API)
+       ========================================================== */
+    #card-discord {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 1px solid var(--verde);
+      background: rgba(0,0,0,0.7);
+      padding: 20px 22px;
+      box-shadow: 0 0 18px rgba(0,255,65,0.4);   /* brilho verde neon pedido */
+    }
+    #card-discord .avatar {
+      width: 84px; height: 84px;
+      border: 1px solid var(--verde);
+      background: var(--preto-2);
+      flex-shrink: 0;
+    }
+    #card-discord .nome {
+      font-size: 18px;
+      color: var(--branco);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    #card-discord .nome::before { content: "@"; color: var(--verde); }
+    #card-discord .status {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--branco);
+    }
+    #card-discord .bolinha {
+      display: inline-block;
+      width: 12px; height: 12px;
+    }
+    #card-discord .carregando, #card-discord .erro {
+      color: var(--ciano); font-size: 13px;
+    }
+
     /* Bloco estilo terminal na home */
     #terminal-boot {
       background: var(--preto-2);
@@ -407,6 +473,7 @@
       main { padding: 24px 14px; }
       #pag-inicio h1 { font-size: 22px; }
       .link-grande { min-width: 100%; }
+      #card-discord { flex-direction: column; text-align: center; }
       .aba { padding: 8px 10px; font-size: 12px; }
     }
   </style>
@@ -451,6 +518,7 @@
       <button class="aba" data-pagina="pag-projetos"><span class="icone">#</span>Projetos<span class="fechar">×</span></button>
       <button class="aba" data-pagina="pag-youtube"><span class="icone">▷</span>YouTube<span class="fechar">×</span></button>
       <button class="aba" data-pagina="pag-steam"><span class="icone">□</span>Steam<span class="fechar">×</span></button>
+      <button class="aba" data-pagina="pag-discord"><span class="icone">◉</span>Discord<span class="fechar">×</span></button>
     </nav>
 
     <!-- CONTEÚDO (SPA) -->
@@ -458,18 +526,27 @@
 
       <!-- ============ SEÇÃO INÍCIO ============ -->
       <section id="pag-inicio" class="pagina ativa">
-        <h1><span class="cifrao">$</span>&gt; [SEU NOME]</h1>
+        <h1><span class="cifrao">&gt;_</span> saguas</h1>
 
         <!-- Sub-título digitado pela máquina de escrever -->
         <div id="sub-titulo"><span id="texto-digitado"></span><span id="cursor-digitacao"></span></div>
 
         <p id="frase-efeito">// Transformando cafeína em código desde o primeiro commit.</p>
 
+        <!-- Apresentação pessoal -->
+        <div id="apresentacao">
+          <div class="linha-codigo">System.<span class="fn">out</span>.println(<span class="str">"Olá, mundo!"</span>);</div>
+          <p>Sou um desenvolvedor Full-Stack que transforma café em código e problemas em soluções. Minha stack principal gira em torno de <span class="hl">JavaScript, Python e bancos SQL</span>, mas estou sempre de olho em novas tecnologias para otimizar fluxos e criar experiências robustas.</p>
+          <p>Atualmente, estou focado em desenvolver minha própria plataforma de cursos, unindo engenharia de software e educação para ajudar outros devs a decolarem na carreira.</p>
+          <p>Se não estou codando, provavelmente estou perdendo horas na Steam ou gravando conteúdo pro YouTube.</p>
+          <p class="status-linha">Status: 🚀 Sempre em produção.</p>
+        </div>
+
         <!-- Mini terminal com linhas que aparecem em sequência -->
         <div id="terminal-boot">
           <div class="barra-terminal"><span>bash — saguas@localhost: ~</span><span>OK</span></div>
           <div class="linha"><span class="prompt">$</span> whoami</div>
-          <div class="linha resp oculta">[SEU NOME]</div>
+          <div class="linha resp oculta">saguas</div>
           <div class="linha"><span class="prompt">$</span> cat ~/skills.txt</div>
           <div class="linha resp oculta">- Full-Stack // front-end, back-end, banco de dados</div>
           <div class="linha resp oculta">- Jogos 2D // pygame, canvas, lógica de jogo</div>
@@ -484,21 +561,21 @@
         <h2>Projetos — GitHub</h2>
         <div id="lista-repos"><span class="ok">carregando repositórios...</span></div>
         <div id="erro-github"></div>
-        <a id="link-perfil" href="https://github.com/[SEU_USERNAME]" target="_blank" rel="noopener">→ ver perfil completo</a>
+        <a id="link-perfil" href="https://github.com/s4guadin" target="_blank" rel="noopener">→ ver perfil completo</a>
       </section>
 
       <!-- ============ SEÇÃO YOUTUBE ============ -->
       <section id="pag-youtube" class="pagina">
         <h2>YouTube</h2>
         <div class="grid-links">
-          <a class="link-grande" href="https://youtube.com/@[SEU_CANAL]" target="_blank" rel="noopener">
+          <a class="link-grande" href="https://www.youtube.com/@Kridex001" target="_blank" rel="noopener">
             <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="1" y="4" width="22" height="16" fill="#111" stroke="#ff0000" stroke-width="2"/>
               <polygon points="10,8 17,12 10,16" fill="#ff0000"/>
             </svg>
             <div>
               <div class="rotulo">canal</div>
-              <div class="valor">youtube.com/@[SEU_CANAL]</div>
+              <div class="valor">youtube.com/@Kridex001</div>
             </div>
           </a>
         </div>
@@ -508,7 +585,7 @@
       <section id="pag-steam" class="pagina">
         <h2>Steam</h2>
         <div class="grid-links">
-          <a class="link-grande" href="https://steamcommunity.com/id/[SEU_ID]" target="_blank" rel="noopener">
+          <a class="link-grande" href="https://steamcommunity.com/id/saguadin038/" target="_blank" rel="noopener">
             <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="7" fill="none" stroke="#8a8a8a" stroke-width="2"/>
               <rect x="17" y="13" width="6" height="6" fill="#8a8a8a" transform="rotate(45 20 16)"/>
@@ -516,9 +593,17 @@
             </svg>
             <div>
               <div class="rotulo">perfil</div>
-              <div class="valor">steamcommunity.com/id/[SEU_ID]</div>
+              <div class="valor">steamcommunity.com/id/saguadin038/</div>
             </div>
           </a>
+        </div>
+      </section>
+
+      <!-- ============ SEÇÃO DISCORD (presença via Widget API) ============ -->
+      <section id="pag-discord" class="pagina">
+        <h2>Discord — Presença</h2>
+        <div id="card-discord">
+          <span class="carregando">consultando widget do servidor...</span>
         </div>
       </section>
 
@@ -545,22 +630,13 @@
        CONFIGURAÇÃO — EDITE AQUI OS SEUS DADOS
        ========================================================== */
     const CONFIG = {
-      NOME:       "[SEU NOME]",            // seu nome exibido na home
-      GITHUB:     "[SEU_USERNAME]",        // usuário do GitHub (API)
-      YOUTUBE:    "https://youtube.com/@[SEU_CANAL]",
-      STEAM:      "https://steamcommunity.com/id/[SEU_ID]"
+      NOME:       "saguas",                          // seu nome exibido na home
+      GITHUB:     "s4guadin",                        // usuário do GitHub (API)
+      YOUTUBE:    "https://www.youtube.com/@Kridex001",
+      STEAM:      "https://steamcommunity.com/id/saguadin038/",
+      DISCORD_SERVER: "[SEU_SERVER_ID]",             // ID numérico do servidor Discord
+      DISCORD_USER:   "[SEU_USER_ID_DISCORD]"        // seu ID numérico de usuário no Discord
     };
-
-    /* Troca os placeholders fixos no HTML pelos valores do CONFIG.
-       (Troca em atributos href e também no texto visível.) */
-    document.querySelectorAll("a").forEach(function (a) {
-      a.href = a.href.replace("[SEU_USERNAME]", CONFIG.GITHUB)
-                     .replace("[SEU_CANAL]", CONFIG.YOUTUBE.split("@")[1] || "[SEU_CANAL]")
-                     .replace("[SEU_ID]", CONFIG.STEAM.split("/").pop());
-    });
-    document.querySelectorAll("h1, h2, .resp").forEach(function (el) {
-      el.innerHTML = el.innerHTML.replaceAll("[SEU NOME]", CONFIG.NOME);
-    });
 
     /* ==========================================================
        1) RELÓGIO DIGITAL (HH:MM:SS) no canto superior direito
@@ -764,6 +840,73 @@
       }
     }
     carregarRepos();
+
+    /* ==========================================================
+       8) DISCORD: card com presença em tempo real (Widget API)
+       ----------------------------------------------------------
+       Usa o widget público do servidor. Para funcionar, ative em
+       Server Settings → Widget no Discord. Atualiza a cada 60s.
+       ========================================================== */
+    // cores dos círculos e textos por status (em português)
+    const STATUS_DISCORD = {
+      online:  { cor: "#00ff41", texto: "Online agora" },   // 🟢 verde
+      idle:    { cor: "#f3e04a", texto: "Ausente" },        // 🟡 amarelo
+      dnd:     { cor: "#ff3b3b", texto: "Ocupado" },        // 🔴 vermelho
+      offline: { cor: "#8a8a8a", texto: "Offline" }         // ⚪ cinza
+    };
+
+    // desenha o card com avatar, nome e status
+    function renderDiscord(card, membro) {
+      // usuário não está na lista do widget → está offline
+      if (!membro) {
+        card.innerHTML =
+          '<div class="status"><span class="bolinha" style="background:#8a8a8a;box-shadow:0 0 8px #8a8a8a"></span>Offline</div>';
+        return;
+      }
+      // se o hash mudar quando a foto for trocada no Discord,
+      // a URL nova é montada aqui e o site puxa a foto atualizada
+      const hash = membro.avatar;
+      const avatar = hash
+        ? "https://cdn.discordapp.com/avatars/" + membro.id + "/" + hash + ".png?size=128"
+        : "https://cdn.discordapp.com/embed/avatars/" + (parseInt(membro.discriminator, 10) % 5) + ".png";
+      const st = STATUS_DISCORD[membro.status] || STATUS_DISCORD.offline;
+      const nome = membro.username + "#" + membro.discriminator;
+      card.innerHTML =
+        '<img class="avatar" src="' + avatar + '" alt="avatar do Discord">' +
+        "<div>" +
+          '<div class="nome">' + nome + "</div>" +
+          '<div class="status"><span class="bolinha" style="background:' + st.cor + ";box-shadow:0 0 8px " + st.cor +
+          '"></span>' + st.texto + "</div>" +
+        "</div>";
+    }
+
+    async function carregarDiscord() {
+      const card = document.getElementById("card-discord");
+      // se os placeholders do CONFIG ainda não foram preenchidos
+      if (CONFIG.DISCORD_SERVER.indexOf("[") === 0 || CONFIG.DISCORD_USER.indexOf("[") === 0) {
+        card.innerHTML =
+          '<div class="erro">// configure DISCORD_SERVER e DISCORD_USER no bloco CONFIG do código.</div>';
+        return;
+      }
+      try {
+        const resposta = await fetch(
+          "https://discord.com/api/guilds/" + CONFIG.DISCORD_SERVER + "/widget.json"
+        );
+        if (!resposta.ok) throw new Error("HTTP " + resposta.status);
+        const dados = await resposta.json();
+        // procura o seu usuário na lista de membros visíveis no widget
+        let membro = null;
+        (dados.members || []).forEach(function (m) {
+          if (m.id === CONFIG.DISCORD_USER) membro = m;
+        });
+        renderDiscord(card, membro);
+      } catch (e) {
+        card.innerHTML =
+          '<div class="erro">// widget indisponível — ative em Configurações do servidor → Widget</div>';
+      }
+    }
+    carregarDiscord();
+    setInterval(carregarDiscord, 60000);   // atualiza a cada 60 segundos
   </script>
 </body>
 </html>
