@@ -76,7 +76,7 @@
       top: 0; left: 0;
       width: 100vw; height: 100vh;
       z-index: 0;
-      opacity: 0.22;               /* baixa opacidade p/ não atrapalhar leitura */
+      opacity: 0.08;               /* bem sutil — só para dar atmosfera */
     }
 
     /* ==========================================================
@@ -92,18 +92,12 @@
         to bottom,
         rgba(0,0,0,0)    0px,
         rgba(0,0,0,0)    2px,
-        rgba(0,0,0,0.22) 2px,
-        rgba(0,0,0,0.22) 4px
+        rgba(0,0,0,0.10) 2px,
+        rgba(0,0,0,0.10) 4px
       );
-      animation: flicker 4s infinite steps(60);
     }
 
-    /* Flicker sutil de CRT */
-    @keyframes flicker {
-      0%   { opacity: 1; }
-      50%  { opacity: 0.96; }
-      100% { opacity: 1; }
-    }
+    /* (flicker de CRT removido para deixar o visual mais limpo) */
 
     /* ==========================================================
        CURSOR PERSONALIZADO (mira neon desenhada em JS)
@@ -120,19 +114,16 @@
     #cursor-personalizado .linha-h {
       position: absolute; left: 0; right: 0; top: 50%;
       height: 1px; background: var(--ciano);
-      box-shadow: 0 0 6px var(--ciano);
     }
     #cursor-personalizado .linha-v {
       position: absolute; top: 0; bottom: 0; left: 50%;
       width: 1px; background: var(--ciano);
-      box-shadow: 0 0 6px var(--ciano);
     }
     #cursor-personalizado .ponto {
       position: absolute; left: 50%; top: 50%;
       width: 4px; height: 4px;
       background: var(--verde);
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 8px var(--verde);
     }
     /* Ao passar o mouse em elementos interativos, a mira cresce */
     #cursor-personalizado.crescendo {
@@ -185,7 +176,6 @@
       border: 1px solid var(--cinza);
       padding: 2px 10px;
       background: var(--preto);
-      box-shadow: 2px 2px 0 var(--cinza);
     }
 
     /* ==========================================================
@@ -193,7 +183,7 @@
        ========================================================== */
     nav#abas {
       display: flex;
-      border-bottom: 2px solid var(--verde);
+      border-bottom: 1px solid var(--cinza);
       background: var(--preto-2);
       overflow-x: auto;
     }
@@ -317,7 +307,7 @@
       border: 1px solid var(--verde);
       background: rgba(0,0,0,0.7);
       padding: 20px 22px;
-      box-shadow: 0 0 18px rgba(0,255,65,0.4);   /* brilho verde neon pedido */
+      box-shadow: 0 0 10px rgba(0,255,65,0.12); /* brilho sutil */
     }
     .card-discord .avatar {
       width: 84px; height: 84px;
@@ -350,7 +340,6 @@
       border: 1px solid var(--verde);
       padding: 16px 18px;
       font-size: 13px;
-      box-shadow: 5px 5px 0 rgba(0,255,65,0.15);
     }
     #terminal-boot .barra-terminal {
       display: flex; justify-content: space-between;
@@ -381,10 +370,10 @@
       padding: 14px 16px;
       transition: box-shadow 0.12s linear, border-color 0.12s linear;
     }
-    /* Hover com sombra HARD (deslocada), sem desfoque "bonitinho" */
+    /* Hover limpo: só muda a cor da borda */
     .card-repo:hover {
       border-color: var(--ciano);
-      box-shadow: 4px 4px 0 var(--ciano);
+      background: rgba(0,0,0,0.45);
     }
     .card-repo .nome {
       color: var(--ciano);
@@ -412,7 +401,6 @@
       text-decoration: none;
       border: 1px solid var(--verde);
       padding: 8px 14px;
-      box-shadow: 3px 3px 0 var(--verde);
       font-size: 13px;
       letter-spacing: 1px;
     }
@@ -440,7 +428,7 @@
     }
     .link-grande:hover {
       border-color: var(--ciano);
-      box-shadow: 4px 4px 0 var(--ciano);
+      background: rgba(0,0,0,0.45);
     }
     .link-grande .rotulo {
       font-size: 11px;
@@ -533,14 +521,15 @@
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      padding: 5px 16px;
-      background: var(--verde);
-      color: var(--preto);
+      padding: 6px 16px;
+      background: var(--preto-2);
+      color: var(--cinza-txt);
       font-size: 11px;
       letter-spacing: 1px;
-      border-top: 1px solid var(--preto);
+      border-top: 1px solid var(--cinza);
       flex-wrap: wrap;
     }
+    footer#barra-status .verde { color: var(--verde); }
     footer#barra-status .esq, footer#barra-status .dir { display: flex; gap: 14px; }
 
     /* Responsivo básico (celular) */
@@ -683,7 +672,7 @@
     <!-- BARRA DE STATUS INFERIOR -->
     <footer id="barra-status">
       <div class="esq">
-        <span>{ } main*</span>
+        <span class="verde">{ } main*</span>
         <span>Ln 1, Col 1</span>
       </div>
       <div class="dir">
@@ -934,7 +923,7 @@
       // usuário offline → o Lanyard não retorna atividades, então usa status
       if (!membro) {
         card.innerHTML =
-          '<div class="status"><span class="bolinha" style="background:#8a8a8a;box-shadow:0 0 8px #8a8a8a"></span>Offline</div>';
+          '<div class="status"><span class="bolinha" style="background:#8a8a8a"></span>Offline</div>';
         return;
       }
       // se o hash mudar quando a foto for trocada no Discord,
@@ -950,8 +939,7 @@
         '<img class="avatar" src="' + avatar + '" alt="avatar do Discord">' +
         "<div>" +
           '<div class="nome">' + nome + "</div>" +
-          '<div class="status"><span class="bolinha" style="background:' + st.cor + ";box-shadow:0 0 8px " + st.cor +
-          '"></span>' + st.texto + "</div>" +
+          '<div class="status"><span class="bolinha" style="background:' + st.cor + '"></span>' + st.texto + "</div>" +
         "</div>";
     }
 
