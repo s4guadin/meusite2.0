@@ -338,27 +338,55 @@
       color: var(--ciano); font-size: 13px;
     }
 
-    /* Bloco estilo terminal na home */
-    #terminal-boot {
-      background: var(--preto-2);
+    /* ==========================================================
+       MINI TERMINAL INTERATIVO
+       ========================================================== */
+    #mini-terminal {
+      background: var(--preto);
       border: 1px solid var(--verde);
-      padding: 16px 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35);
       font-size: 13px;
+      cursor: text;
     }
-    #terminal-boot .barra-terminal {
+    #mini-terminal .barra-terminal {
       display: flex; justify-content: space-between;
       color: var(--cinza-txt);
       border-bottom: 1px solid var(--cinza);
-      padding-bottom: 6px;
-      margin-bottom: 10px;
+      padding: 8px 14px;
       font-size: 11px;
       letter-spacing: 2px;
+      background: var(--preto-2);
     }
-    #terminal-boot .linha { color: var(--branco); white-space: pre-wrap; }
-    #terminal-boot .linha .prompt { color: var(--verde); }
-    #terminal-boot .linha .resp  { color: var(--cinza-txt); }
-    #terminal-boot .linha .ok    { color: var(--ciano); }
-    #terminal-boot .linha.oculta { display: none; }
+    #mini-terminal .barra-terminal .ok { color: var(--verde); }
+    #mini-terminal .term-saida {
+      padding: 12px 14px;
+      height: 230px;
+      overflow-y: auto;
+      color: var(--branco);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    #mini-terminal .term-saida .resposta { color: var(--cinza-txt); }
+    #mini-terminal .term-saida .resposta a { color: var(--ciano); text-decoration: none; }
+    #mini-terminal .term-saida .resposta a:hover { color: var(--verde); }
+    #mini-terminal .term-saida .destaque { color: var(--verde); }
+    #mini-terminal .term-linha {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 14px;
+      border-top: 1px solid var(--cinza);
+      background: var(--preto-2);
+    }
+    #mini-terminal .term-prompt { color: var(--verde); white-space: nowrap; }
+    #mini-terminal #term-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--branco);
+      font-family: inherit;
+      font-size: 13px;
+      caret-color: var(--verde);
+    }
 
     /* ==========================================================
        SEÇÃO PROJETOS (cards de repositórios do GitHub)
@@ -571,7 +599,7 @@
     }
 
     /* profundidade leve nos painéis (moderno, sem brilho colorido) */
-    #terminal-boot,
+    #mini-terminal,
     #apresentacao,
     #card-steam,
     .card-repo,
@@ -674,17 +702,14 @@
           <p class="status-linha">Status: 🚀 Sempre em produção.</p>
         </div>
 
-        <!-- Mini terminal com linhas que aparecem em sequência -->
-        <div id="terminal-boot">
-          <div class="barra-terminal"><span>bash — saguas@localhost: ~</span><span>OK</span></div>
-          <div class="linha"><span class="prompt">$</span> whoami</div>
-          <div class="linha resp oculta">saguas</div>
-          <div class="linha"><span class="prompt">$</span> cat ~/skills.txt</div>
-          <div class="linha resp oculta">- Full-Stack // front-end, back-end, banco de dados</div>
-          <div class="linha resp oculta">- Jogos 2D // pygame, canvas, lógica de jogo</div>
-          <div class="linha resp oculta">- Automação // scripts, APIs, bots</div>
-          <div class="linha"><span class="prompt">$</span> npm run vida -- --modo produtivo</div>
-          <div class="linha resp ok oculta">> em execução... 0 erros, 0 avisos</div>
+        <!-- Mini terminal interativo -->
+        <div id="mini-terminal">
+          <div class="barra-terminal"><span>bash — saguas@localhost: ~</span><span class="ok">OK</span></div>
+          <div id="term-saida" class="term-saida"></div>
+          <div class="term-linha">
+            <span class="term-prompt">saguas@localhost:~$</span>
+            <input id="term-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" aria-label="comandos do terminal">
+          </div>
         </div>
 
         <!-- Card do Discord (presença em tempo real) -->
@@ -896,15 +921,147 @@
     digitar();
 
     /* ==========================================================
-       6) TERMINAL DA HOME: revela as respostas em sequência
+       6) MINI TERMINAL INTERATIVO
        ========================================================== */
-    const linhasOcultas = document.querySelectorAll("#terminal-boot .oculta");
-    let linhaAtual = 0;
-    const intervaloTerminal = setInterval(function () {
-      if (linhaAtual >= linhasOcultas.length) { clearInterval(intervaloTerminal); return; }
-      linhasOcultas[linhaAtual].style.display = "block";
-      linhaAtual++;
-    }, 500);
+    const termSaida = document.getElementById("term-saida");
+    const termInput = document.getElementById("term-input");
+    const miniTerm = document.getElementById("mini-terminal");
+
+    const NEOFETCH =
+      "      .         saguas@localhost\n" +
+      "     / \\        ---------------\n" +
+      "    /   \\       SO: Terminal Linux 80x24\n" +
+      "   | ' ' |      Host: GitHub Pages\n" +
+      "   |  _  |      Linguagens: JS, Python, SQL\n" +
+      "   |_____|      Uptime: desde o primeiro commit\n" +
+      "      |\n";
+
+    function escaparHTML(txt) {
+      return String(txt)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function imprimirLinha(texto, classe) {
+      const div = document.createElement("div");
+      if (classe) div.className = classe;
+      div.innerHTML = texto;
+      termSaida.appendChild(div);
+      termSaida.scrollTop = termSaida.scrollHeight;
+    }
+
+    function comandoHelp() {
+      return (
+        "Comandos disponíveis:\n" +
+        "  help       mostra esta lista\n" +
+        "  whoami     quem é você\n" +
+        "  about      sobre mim\n" +
+        "  skills     principais stacks\n" +
+        "  projetos   meus repositórios no GitHub\n" +
+        "  social     links (github, youtube, steam, discord)\n" +
+        "  neofetch   informações do sistema\n" +
+        "  date       data e hora atual\n" +
+        "  echo       repete o que você digitar\n" +
+        "  clear      limpa a tela\n" +
+        "  sudo       para que pedir permissão a si mesmo?"
+      );
+    }
+    function comandoWhoami() { return "saguas — desenvolvedor Full-Stack."; }
+    function comandoAbout() {
+      return (
+        "Desenvolvedor Full-Stack que transforma café em código e problemas em soluções. " +
+        "Atualmente focado numa plataforma de cursos."
+      );
+    }
+    function comandoSkills() {
+      return (
+        "- Full-Stack // front-end, back-end, banco de dados\n" +
+        "- Jogos 2D // pygame, canvas, lógica de jogo\n" +
+        "- Automação // scripts, APIs, bots"
+      );
+    }
+    function comandoProjetos() {
+      return (
+        "Repositórios no GitHub (" + CONFIG.GITHUB + "):\n" +
+        '  <a href="https://github.com/' + CONFIG.GITHUB + '/meusite2.0" target="_blank" rel="noopener">meusite2.0</a>\n' +
+        '  <a href="https://github.com/' + CONFIG.GITHUB + '/animeflix" target="_blank" rel="noopener">animeflix</a>\n' +
+        '  <a href="https://github.com/' + CONFIG.GITHUB + '/meu-site-pessoal" target="_blank" rel="noopener">meu-site-pessoal</a>\n' +
+        '  <a href="https://github.com/' + CONFIG.GITHUB + '/keys" target="_blank" rel="noopener">keys</a>\n' +
+        "(confira a aba Projetos para a lista completa)"
+      );
+    }
+    function comandoSocial() {
+      return (
+        "GitHub:  https://github.com/" + CONFIG.GITHUB + "\n" +
+        "YouTube: " + CONFIG.YOUTUBE + "\n" +
+        "Steam:   " + CONFIG.STEAM + "\n" +
+        "Discord: " + CONFIG.DISCORD_USER
+      );
+    }
+    function comandoNeofetch() { return NEOFETCH; }
+    function comandoDate() { return new Date().toLocaleString("pt-BR"); }
+    function comandoEcho(args) { return args ? args : "(vazio — tente: echo olá)"; }
+    function comandoExit() { return "hehe, o site continua aberto. Tente \"help\"."; }
+    function comandoSudo() { return "usuario saguas e root. Sem necessidade de sudo."; }
+
+    const COMANDOS = {
+      help: comandoHelp,
+      whoami: comandoWhoami,
+      about: comandoAbout,
+      skills: comandoSkills,
+      projetos: comandoProjetos,
+      repos: comandoProjetos,
+      social: comandoSocial,
+      neofetch: comandoNeofetch,
+      date: comandoDate,
+      echo: comandoEcho,
+      exit: comandoExit,
+      sudo: comandoSudo,
+      ls: function () { return "index.html   steam.json   projetos/   social/"; }
+    };
+
+    function processarComando(entrada) {
+      const entradaLimpa = entrada.trim();
+      if (entradaLimpa.toLowerCase() === "clear") {
+        termSaida.innerHTML = "";
+        return;
+      }
+      imprimirLinha(
+        '<span class="term-prompt">saguas@localhost:~$</span> ' + escaparHTML(entradaLimpa),
+        "comando"
+      );
+      if (!entradaLimpa) return;
+      const partes = entradaLimpa.split(/\s+/);
+      const nome = partes[0].toLowerCase();
+      const args = partes.slice(1).join(" ");
+      const fn = COMANDOS[nome];
+      const saida = fn
+        ? fn(args)
+        : 'comando nao encontrado: "' + escaparHTML(nome) + '". Digite "help".';
+      imprimirLinha(String(saida), "resposta");
+    }
+
+    termInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        processarComando(termInput.value);
+        termInput.value = "";
+        termInput.focus();
+      }
+    });
+    miniTerm.addEventListener("click", function () { termInput.focus(); });
+
+    const BOOT = [
+      "<span class='resposta'>Inicializando kernel... OK</span>",
+      "<span class='resposta'>Carregando saguas.sh... OK</span>",
+      "<span class='resposta'>Bem-vindo! Digite <span class='destaque'>help</span> para ver os comandos.</span>"
+    ];
+    let bootIdx = 0;
+    const intervaloBoot = setInterval(function () {
+      if (bootIdx >= BOOT.length) { clearInterval(intervaloBoot); return; }
+      imprimirLinha(BOOT[bootIdx], "");
+      bootIdx++;
+    }, 300);
 
     /* ==========================================================
        7) PROJETOS: consome a API pública do GitHub
