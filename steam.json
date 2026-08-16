@@ -10,21 +10,21 @@
   "gameName": "tModLoader",
   "gameLink": "https://steamcommunity.com/app/1281930",
   "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
-  "hoursPlayed": "12.4",
+  "hoursPlayed": "12.9",
   "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "tModLoader",
-      "horas": "12.4"
+      "horas": "12.9"
     },
     {
       "nome": "Terraria",
-      "horas": "12.3"
+      "horas": "12.8"
     },
     {
       "nome": "DDNet",
       "horas": "1.8"
     }
   ],
-  "atualizadoEm": "2026-08-16T22:56:53.263775+00:00"
+  "atualizadoEm": "2026-08-16T23:18:36.340808+00:00"
 }
