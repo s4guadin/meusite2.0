@@ -1,17 +1,17 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "in-game",
-  "stateMessage": "In-Game<br/>Terraria",
+  "onlineState": "offline",
+  "stateMessage": "Offline",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "tModLoader",
   "gameLink": "https://steamcommunity.com/app/1281930",
-  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
+  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
   "hoursPlayed": "14.7",
-  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "tModLoader",
@@ -26,5 +26,5 @@
       "horas": "1.8"
     }
   ],
-  "atualizadoEm": "2026-08-17T00:55:29.262396+00:00"
+  "atualizadoEm": "2026-08-17T02:17:22.575954+00:00"
 }
