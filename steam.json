@@ -9,22 +9,22 @@
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "tModLoader",
   "gameLink": "https://steamcommunity.com/app/1281930",
-  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
-  "hoursPlayed": "11.2",
-  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
+  "hoursPlayed": "12.2",
+  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "tModLoader",
-      "horas": "11.2"
+      "horas": "12.2"
     },
     {
       "nome": "Terraria",
-      "horas": "11.2"
+      "horas": "12.2"
     },
     {
       "nome": "DDNet",
       "horas": "1.2"
     }
   ],
-  "atualizadoEm": "2026-08-19T22:56:39.247406+00:00"
+  "atualizadoEm": "2026-08-19T23:20:39.651983+00:00"
 }
