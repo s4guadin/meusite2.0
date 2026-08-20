@@ -2,7 +2,7 @@
 	<steamID64>76561199177832743</steamID64>
 	<steamID><![CDATA[Mano_Saguas]]></steamID>
 	<onlineState>in-game</onlineState>
-	<stateMessage><![CDATA[In-Game<br/>Moonlighter]]></stateMessage>
+	<stateMessage><![CDATA[In-Game<br/>tModLoader]]></stateMessage>
 	<privacyState>public</privacyState>
 	<visibilityState>3</visibilityState>
 	<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722.jpg]]></avatarIcon>
@@ -49,6 +49,16 @@
 			<hoursOnRecord>1,735</hoursOnRecord>
 		</mostPlayedGame>
 		<mostPlayedGame>
+			<gameName><![CDATA[Moonlighter]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/606150]]></gameLink>
+			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/606150/13ffc570ce5bbe6a5a0c0eec567b87dab07cae25.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogoSmall>
+			<hoursPlayed>0.4</hoursPlayed>
+			<hoursOnRecord>0.4</hoursOnRecord>
+			<statsName><![CDATA[606150]]></statsName>
+		</mostPlayedGame>
+		<mostPlayedGame>
 			<gameName><![CDATA[Nocturnal]]></gameName>
 			<gameLink><![CDATA[https://steamcommunity.com/app/1634080]]></gameLink>
 			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/1634080/e1e2321cd4b6c89c46ab3ba0d59bd9523fc89c1c.jpg]]></gameIcon>
@@ -71,10 +81,10 @@
 			<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
-			<memberCount>1462119</memberCount>
+			<memberCount>1462115</memberCount>
 			<membersInChat>240523</membersInChat>
-			<membersInGame>46715</membersInGame>
-			<membersOnline>211263</membersOnline>
+			<membersInGame>44393</membersInGame>
+			<membersOnline>205396</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791464738143</groupID64>
@@ -85,10 +95,10 @@
 			<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
-			<memberCount>26842</memberCount>
+			<memberCount>26843</memberCount>
 			<membersInChat>2175</membersInChat>
-			<membersInGame>1368</membersInGame>
-			<membersOnline>5434</membersOnline>
+			<membersInGame>1426</membersInGame>
+			<membersOnline>5523</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791468067497</groupID64>
@@ -101,8 +111,8 @@
 			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
 			<memberCount>218</memberCount>
 			<membersInChat>103</membersInChat>
-			<membersInGame>9</membersInGame>
-			<membersOnline>30</membersOnline>
+			<membersInGame>7</membersInGame>
+			<membersOnline>28</membersOnline>
 		</group>
 			<group isPrimary="0">
 				<groupID64>103582791470150257</groupID64>
