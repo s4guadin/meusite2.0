@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><profile>
 	<steamID64>76561199177832743</steamID64>
 	<steamID><![CDATA[Mano_Saguas]]></steamID>
-	<onlineState>online</onlineState>
-	<stateMessage><![CDATA[Online]]></stateMessage>
+	<onlineState>offline</onlineState>
+	<stateMessage><![CDATA[Offline]]></stateMessage>
 	<privacyState>public</privacyState>
 	<visibilityState>3</visibilityState>
 	<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722.jpg]]></avatarIcon>
@@ -81,10 +81,10 @@
 			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
-			<memberCount>1462035</memberCount>
+			<memberCount>1462031</memberCount>
 			<membersInChat>240523</membersInChat>
-			<membersInGame>28005</membersInGame>
-			<membersOnline>151712</membersOnline>
+			<membersInGame>28615</membersInGame>
+			<membersOnline>152842</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791464738143</groupID64>
@@ -95,10 +95,10 @@
 			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
-			<memberCount>26894</memberCount>
+			<memberCount>26896</memberCount>
 			<membersInChat>2187</membersInChat>
-			<membersInGame>1209</membersInGame>
-			<membersOnline>4396</membersOnline>
+			<membersInGame>994</membersInGame>
+			<membersOnline>3869</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791468067497</groupID64>
@@ -112,7 +112,7 @@
 			<memberCount>217</memberCount>
 			<membersInChat>103</membersInChat>
 			<membersInGame>1</membersInGame>
-			<membersOnline>19</membersOnline>
+			<membersOnline>22</membersOnline>
 		</group>
 			<group isPrimary="0">
 				<groupID64>103582791470150257</groupID64>
