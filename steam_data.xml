@@ -5,9 +5,9 @@
 	<stateMessage><![CDATA[Offline]]></stateMessage>
 	<privacyState>public</privacyState>
 	<visibilityState>3</visibilityState>
-	<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722.jpg]]></avatarIcon>
-	<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_medium.jpg]]></avatarMedium>
-	<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg]]></avatarFull>
+	<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722.jpg]]></avatarIcon>
+	<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_medium.jpg]]></avatarMedium>
+	<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg]]></avatarFull>
 	<vacBanned>0</vacBanned>
 	<tradeBanState>None</tradeBanState>
 	<isLimitedAccount>0</isLimitedAccount>
@@ -23,18 +23,18 @@
 		<mostPlayedGame>
 			<gameName><![CDATA[tModLoader]]></gameName>
 			<gameLink><![CDATA[https://steamcommunity.com/app/1281930]]></gameLink>
-			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg]]></gameIcon>
-			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1281930/capsule_184x69.jpg?t=1785952759]]></gameLogo>
-			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1281930/capsule_184x69.jpg?t=1785952759]]></gameLogoSmall>
+			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1281930/capsule_184x69.jpg?t=1785952759]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1281930/capsule_184x69.jpg?t=1785952759]]></gameLogoSmall>
 			<hoursPlayed>24.1</hoursPlayed>
 			<hoursOnRecord>131</hoursOnRecord>
 		</mostPlayedGame>
 		<mostPlayedGame>
 			<gameName><![CDATA[Terraria]]></gameName>
 			<gameLink><![CDATA[https://steamcommunity.com/app/105600]]></gameLink>
-			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg]]></gameIcon>
-			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435]]></gameLogo>
-			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435]]></gameLogoSmall>
+			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435]]></gameLogoSmall>
 			<hoursPlayed>24.1</hoursPlayed>
 			<hoursOnRecord>150</hoursOnRecord>
 			<statsName><![CDATA[105600]]></statsName>
@@ -42,9 +42,9 @@
 		<mostPlayedGame>
 			<gameName><![CDATA[Moonlighter]]></gameName>
 			<gameLink><![CDATA[https://steamcommunity.com/app/606150]]></gameLink>
-			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/606150/13ffc570ce5bbe6a5a0c0eec567b87dab07cae25.jpg]]></gameIcon>
-			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogo>
-			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogoSmall>
+			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/606150/13ffc570ce5bbe6a5a0c0eec567b87dab07cae25.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogoSmall>
 			<hoursPlayed>0.4</hoursPlayed>
 			<hoursOnRecord>0.4</hoursOnRecord>
 			<statsName><![CDATA[606150]]></statsName>
@@ -52,9 +52,9 @@
 		<mostPlayedGame>
 			<gameName><![CDATA[Nocturnal]]></gameName>
 			<gameLink><![CDATA[https://steamcommunity.com/app/1634080]]></gameLink>
-			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/1634080/e1e2321cd4b6c89c46ab3ba0d59bd9523fc89c1c.jpg]]></gameIcon>
-			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1634080/b3a7303807116f47e723267e3fd4b8fa7e00a5b5/capsule_184x69.jpg?t=1782833654]]></gameLogo>
-			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1634080/b3a7303807116f47e723267e3fd4b8fa7e00a5b5/capsule_184x69.jpg?t=1782833654]]></gameLogoSmall>
+			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/1634080/e1e2321cd4b6c89c46ab3ba0d59bd9523fc89c1c.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1634080/b3a7303807116f47e723267e3fd4b8fa7e00a5b5/capsule_184x69.jpg?t=1782833654]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1634080/b3a7303807116f47e723267e3fd4b8fa7e00a5b5/capsule_184x69.jpg?t=1782833654]]></gameLogoSmall>
 			<hoursPlayed>0.1</hoursPlayed>
 			<hoursOnRecord>0.1</hoursOnRecord>
 			<statsName><![CDATA[1634080]]></statsName>
@@ -69,13 +69,13 @@
 			<groupURL><![CDATA[hentaii]]></groupURL>
 			<headline><![CDATA[Largest hentai &amp; ecchi community on steam! Everyone is welcome! ^^]]></headline>
 			<summary><![CDATA[<div class="bb_h1">Group for all Anime, Hentai &amp; Ecchi lovers ^^ All fans join!</div><br><b><a class="bb_link" href="https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fteespring.com%2Fstores%2Fhentai-official-store" target="_blank" rel=" noopener" >Original Hentai! Merchandise</a><span class="bb_link_host">[teespring.com]</span></b><br><br><b><a class="bb_link" href="http://store.steampowered.com/curator/31748181/" target="_blank" rel="" >Follow Our Steam Curator!</a></b><br><br><b><a class="bb_link" href="https://store.steampowered.com/publisher/Kagura/" target="_blank" rel="" >Check out great games from our friends Kagura Games!</a></b><br><br><b><a class="bb_link" href="https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FxZxMsQwgxE" target="_blank" rel=" noopener" >Discord!</a><span class="bb_link_host">[discord.gg]</span></b><br><br><b>Disclaimer: This group doesn't own any trade bots, anyone pretending to be one is trying to scam you!</b><br><br>Source of the current group avatar can be found on the forums!<br><br><b>Group rules:<br><ol><li>Forum/chat language: English.<br></li><li>No spam.<br></li><li>No linesplitting in chat (5max).<br></li><li>No harassment.<br></li><li>No flaming.<br></li><li>No erp in chat.<br></li><li>Advertising other groups is considered spam and will be deleted.                                                  <br></li><li>Respect the mods! Mods always have a reason to warn/kick/ban you.<br></li><li>Joke around, but don't be stupid and a dick.<br></li><li>Don't break the steam guidelines and regulations.<br></li><li>Don't post links to sites that violate international rules of what's acceptable.<br></li><li>Hentai related content is allowed.<br></li><li>Links to loli/shota are not allowed since they are illegal in some countries. <br></li><li>You can talk about anything, as long as it's not violating the rules above.<br></li><li>Trading through the chat is allowed, but do not spam trade offers.</li></ol><br>Repeatedly breaking any of these rules will lead to a warning, then a kick and finally a ban. </b><br><br><br>Content suitable only for adults ages 18 and up!<br><br><br><b><a class="bb_link" href="http://store.steampowered.com/curator/31748181/" target="_blank" rel="" >Steam Curator</a><br><a class="bb_link" href="https://steamcommunity.com/groups/hentaii/discussions/2/412448792357707986/" target="_blank" rel="" >Discord</a></b>]]></summary>
-			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
-			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
-			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
+			<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
+			<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
+			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
 			<memberCount>1461954</memberCount>
 			<membersInChat>240523</membersInChat>
-			<membersInGame>23021</membersInGame>
-			<membersOnline>136027</membersOnline>
+			<membersInGame>23464</membersInGame>
+			<membersOnline>137696</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791464738143</groupID64>
@@ -83,13 +83,13 @@
 			<groupURL><![CDATA[FuriaEsportsBR]]></groupURL>
 			<headline><![CDATA[]]></headline>
 			<summary><![CDATA[No information given.]]></summary>
-			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
-			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
-			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
-			<memberCount>26911</memberCount>
+			<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
+			<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
+			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
+			<memberCount>26910</memberCount>
 			<membersInChat>2190</membersInChat>
-			<membersInGame>554</membersInGame>
-			<membersOnline>2602</membersOnline>
+			<membersInGame>473</membersInGame>
+			<membersOnline>2340</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791468067497</groupID64>
@@ -97,13 +97,13 @@
 			<groupURL><![CDATA[DDNetZA]]></groupURL>
 			<headline><![CDATA[]]></headline>
 			<summary><![CDATA[No information given.]]></summary>
-			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11.jpg]]></avatarIcon>
-			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_medium.jpg]]></avatarMedium>
-			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
+			<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11.jpg]]></avatarIcon>
+			<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_medium.jpg]]></avatarMedium>
+			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
 			<memberCount>217</memberCount>
 			<membersInChat>104</membersInChat>
 			<membersInGame>8</membersInGame>
-			<membersOnline>23</membersOnline>
+			<membersOnline>29</membersOnline>
 		</group>
 			<group isPrimary="0">
 				<groupID64>103582791470150257</groupID64>
