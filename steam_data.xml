@@ -72,10 +72,10 @@
 			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
-			<memberCount>1461928</memberCount>
+			<memberCount>1461929</memberCount>
 			<membersInChat>240523</membersInChat>
-			<membersInGame>35689</membersInGame>
-			<membersOnline>177548</membersOnline>
+			<membersInGame>33603</membersInGame>
+			<membersOnline>172070</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791464738143</groupID64>
@@ -88,8 +88,8 @@
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
 			<memberCount>26920</memberCount>
 			<membersInChat>2192</membersInChat>
-			<membersInGame>1763</membersInGame>
-			<membersOnline>6212</membersOnline>
+			<membersInGame>1743</membersInGame>
+			<membersOnline>6209</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791468067497</groupID64>
@@ -102,8 +102,8 @@
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
 			<memberCount>217</memberCount>
 			<membersInChat>104</membersInChat>
-			<membersInGame>6</membersInGame>
-			<membersOnline>22</membersOnline>
+			<membersInGame>5</membersInGame>
+			<membersOnline>21</membersOnline>
 		</group>
 			<group isPrimary="0">
 				<groupID64>103582791470150257</groupID64>
