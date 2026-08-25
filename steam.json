@@ -10,16 +10,16 @@
   "gameName": "tModLoader",
   "gameLink": "https://steamcommunity.com/app/1281930",
   "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
-  "hoursPlayed": "26.1",
+  "hoursPlayed": "26.6",
   "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "tModLoader",
-      "horas": "26.1"
+      "horas": "26.6"
     },
     {
       "nome": "Terraria",
-      "horas": "26.1"
+      "horas": "26.6"
     },
     {
       "nome": "Moonlighter",
@@ -30,5 +30,5 @@
       "horas": "0.1"
     }
   ],
-  "atualizadoEm": "2026-08-24T23:47:23.357708+00:00"
+  "atualizadoEm": "2026-08-25T00:02:02.961630+00:00"
 }
