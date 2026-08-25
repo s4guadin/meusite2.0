@@ -1,25 +1,25 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "offline",
-  "stateMessage": "Offline",
+  "onlineState": "in-game",
+  "stateMessage": "In-Game<br/>Terraria",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
-  "gameName": "tModLoader",
-  "gameLink": "https://steamcommunity.com/app/1281930",
-  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
+  "gameName": "Terraria",
+  "gameLink": "https://steamcommunity.com/app/105600",
+  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
   "hoursPlayed": "27.2",
-  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
-      "nome": "tModLoader",
+      "nome": "Terraria",
       "horas": "27.2"
     },
     {
-      "nome": "Terraria",
-      "horas": "27.1"
+      "nome": "tModLoader",
+      "horas": "27.2"
     },
     {
       "nome": "Moonlighter",
@@ -30,5 +30,5 @@
       "horas": "0.1"
     }
   ],
-  "atualizadoEm": "2026-08-25T14:06:23.923681+00:00"
+  "atualizadoEm": "2026-08-25T14:59:31.314049+00:00"
 }
