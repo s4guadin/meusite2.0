@@ -1,8 +1,8 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "online",
-  "stateMessage": "Online",
+  "onlineState": "offline",
+  "stateMessage": "Offline",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
@@ -30,5 +30,5 @@
       "horas": "0.1"
     }
   ],
-  "atualizadoEm": "2026-08-25T04:20:11.822472+00:00"
+  "atualizadoEm": "2026-08-25T05:03:08.842118+00:00"
 }
