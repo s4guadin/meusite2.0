@@ -10,20 +10,24 @@
   "gameName": "Terraria",
   "gameLink": "https://steamcommunity.com/app/105600",
   "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
-  "hoursPlayed": "31.4",
+  "hoursPlayed": "30.1",
   "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "Terraria",
-      "horas": "31.4"
+      "horas": "30.1"
     },
     {
       "nome": "tModLoader",
-      "horas": "26.7"
+      "horas": "25.5"
     },
     {
       "nome": "DDNet",
-      "horas": "1.6"
+      "horas": "2.0"
+    },
+    {
+      "nome": "Brawlhalla",
+      "horas": "0.8"
     },
     {
       "nome": "Moonlighter",
@@ -32,11 +36,7 @@
     {
       "nome": "Happy Endings Demo",
       "horas": "0.4"
-    },
-    {
-      "nome": "Nocturnal",
-      "horas": "0.1"
     }
   ],
-  "atualizadoEm": "2026-08-28T21:31:15.997246+00:00"
+  "atualizadoEm": "2026-08-29T03:21:21.018923+00:00"
 }
