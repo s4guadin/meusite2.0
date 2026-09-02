@@ -1,361 +1,131 @@
-<!DOCTYPE html>
-<html class=" responsive DesktopUI" lang="en"  >
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-			<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="theme-color" content="#171a21">
-		<title>Steam Community :: Error</title>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-	
-	
-	<link href="https://community.fastly.steamstatic.com/public/shared/css/motiva_sans.css?v=-yZgCk0Nu7kH&amp;l=english&amp;_cdn=fastly" rel="stylesheet" type="text/css">
-<link href="https://community.fastly.steamstatic.com/public/shared/css/buttons.css?v=0Ihq-pAoptBq&amp;l=english&amp;_cdn=fastly" rel="stylesheet" type="text/css">
-<link href="https://community.fastly.steamstatic.com/public/shared/css/shared_global.css?v=LPzP0XCBpQoS&amp;l=english&amp;_cdn=fastly" rel="stylesheet" type="text/css">
-<link href="https://community.fastly.steamstatic.com/public/css/globalv2.css?v=VJJj6r-t5GM6&amp;l=english&amp;_cdn=fastly" rel="stylesheet" type="text/css">
-<link href="https://community.fastly.steamstatic.com/public/css/skin_1/fatalerror.css?v=OFUqlcDNiD6y&amp;l=english&amp;_cdn=fastly" rel="stylesheet" type="text/css">
-<link href="https://community.fastly.steamstatic.com/public/shared/css/shared_responsive.css?v=G6uS9kBT7364&amp;l=english&amp;_cdn=fastly" rel="stylesheet" type="text/css">
-<link href="https://community.fastly.steamstatic.com/public/css/skin_1/header.css?v=EM4kCu67DNda&amp;l=english&amp;_cdn=fastly" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-	var __PrototypePreserve=[];
-	__PrototypePreserve[0] = Array.from;
-	__PrototypePreserve[1] = Array.prototype.filter;
-	__PrototypePreserve[2] = Array.prototype.flatMap;
-	__PrototypePreserve[3] = Array.prototype.find;
-	__PrototypePreserve[4] = Array.prototype.some;
-	__PrototypePreserve[5] = Function.prototype.bind;
-	__PrototypePreserve[6] = HTMLElement.prototype.scrollTo;
-</script>
-<script type="text/javascript" src="https://community.fastly.steamstatic.com/public/javascript/prototype-1.7.js?v=npJElBnrEO6W&amp;l=english&amp;_cdn=fastly"></script>
-<script type="text/javascript">
-	Array.from = __PrototypePreserve[0] || Array.from;
-	Array.prototype.filter = __PrototypePreserve[1] || Array.prototype.filter;
-	Array.prototype.flatMap = __PrototypePreserve[2] || Array.prototype.flatMap;
-	Array.prototype.find = __PrototypePreserve[3] || Array.prototype.find;
-	Array.prototype.some = __PrototypePreserve[4] || Array.prototype.some;
-	Function.prototype.bind = __PrototypePreserve[5] || Function.prototype.bind;
-	HTMLElement.prototype.scrollTo = __PrototypePreserve[6] || HTMLElement.prototype.scrollTo;
-</script>
-<script type="text/javascript">
-	var __ScriptaculousPreserve=[];
-	__ScriptaculousPreserve[0] = Array.from;
-	__ScriptaculousPreserve[1] = Function.prototype.bind;
-	__ScriptaculousPreserve[2] = HTMLElement.prototype.scrollTo;
-</script>
-<script type="text/javascript" src="https://community.fastly.steamstatic.com/public/javascript/scriptaculous/_combined.js?v=pbdAKOcDIgbC&amp;l=english&amp;_cdn=fastly&amp;load=effects,controls,slider,dragdrop"></script>
-<script type="text/javascript">
-	Array.from = __ScriptaculousPreserve[0] || Array.from;
-	Function.prototype.bind = __ScriptaculousPreserve[1] || Function.prototype.bind;
-	HTMLElement.prototype.scrollTo = __ScriptaculousPreserve[2] || HTMLElement.prototype.scrollTo;
-delete String['__parseStyleElement'];  Prototype.Browser.WebKit = true;</script>
-<script type="text/javascript">VALVE_PUBLIC_PATH = "https:\/\/community.fastly.steamstatic.com\/public\/";</script><script type="text/javascript" src="https://community.fastly.steamstatic.com/public/javascript/global.js?v=to0FAp8kD8Yj&amp;l=english&amp;_cdn=fastly"></script>
-<script type="text/javascript" src="https://community.fastly.steamstatic.com/public/javascript/jquery-1.11.1.min.js?v=gQHVlrK4-jX-&amp;l=english&amp;_cdn=fastly"></script>
-<script type="text/javascript" src="https://community.fastly.steamstatic.com/public/shared/javascript/tooltip.js?v=a9q1REOJMDBo&amp;l=english&amp;_cdn=fastly"></script>
-<script type="text/javascript" src="https://community.fastly.steamstatic.com/public/shared/javascript/shared_global.js?v=LKHHGyvATtqM&amp;l=english&amp;_cdn=fastly"></script>
-<script type="text/javascript" src="https://community.fastly.steamstatic.com/public/shared/javascript/auth_refresh.js?v=w6QbwI-5-j2S&amp;l=english&amp;_cdn=fastly"></script>
-<script type="text/javascript">Object.seal && [ Object, Array, String, Number ].map( function( builtin ) { Object.seal( builtin.prototype ); } );</script><script type="text/javascript">$J = jQuery.noConflict();
-if ( typeof JSON != 'object' || !JSON.stringify || !JSON.parse ) { document.write( "<scr" + "ipt type=\"text\/javascript\" src=\"https:\/\/community.fastly.steamstatic.com\/public\/javascript\/json2.js?v=54NKNglvGTO8&amp;l=english&amp;_cdn=fastly\"><\/script>\n" ); };
-</script>
-		<script type="text/javascript">
-			document.addEventListener('DOMContentLoaded', function(event) {
-				SetupTooltips( { tooltipCSSClass: 'community_tooltip'} );
-		});
-		</script><script type="text/javascript" src="https://community.fastly.steamstatic.com/public/shared/javascript/shared_responsive_adapter.js?v=asNZNxt9kVQn&amp;l=english&amp;_cdn=fastly"></script>
-
-						<meta name="twitter:card" content="summary_large_image">
-			
-	<meta name="twitter:site" content="@steam" />
-
-						<meta property="og:title" content="Steam Community :: Error">
-					<meta property="twitter:title" content="Steam Community :: Error">
-					<meta property="og:type" content="website">
-					<meta property="fb:app_id" content="105386699540688">
-			
-	
-	
-	
-	
-	
-	</head>
-<body class=" responsive_page " >
-
-
-<div class="responsive_page_frame with_header">
-						<div role="navigation" class="responsive_page_menu_ctn mainmenu" aria-label="Mobile Menu">
-				<div class="responsive_page_menu"  id="responsive_page_menu">
-										<div class="mainmenu_contents">
-						<div class="mainmenu_contents_items">
-															<a class="menuitem" href="https://steamcommunity.com/login/home/?goto=id%2Fsaguadin038%2F%3Fxml%3D1">
-									Sign in								</a>
-															<a class="menuitem supernav" href="https://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Store">
-				Store			</a>
-			<div class="submenu_Store" style="display: none;" data-submenuid="Store">
-														<a class="submenuitem" href="https://store.steampowered.com/">
-						Home											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/explore/">
-						Discovery Queue											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/wishlist/">
-						Wishlist											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/points/shop/">
-						Points Shop											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/news/">
-						News											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/stats/">
-						Charts											</a>
-							</div>
-										<a class="menuitem supernav supernav_active" href="https://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Community">
-				Community			</a>
-			<div class="submenu_Community" style="display: none;" data-submenuid="Community">
-														<a class="submenuitem" href="https://steamcommunity.com/">
-						Home											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/discussions/">
-						Discussions											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/workshop/">
-						Workshop											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/market/">
-						Market											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/?subsection=broadcasts">
-						Broadcasts											</a>
-							</div>
-										<a class="menuitem " href="https://store.steampowered.com/about/">
-				About			</a>
-										<a class="menuitem " href="https://help.steampowered.com/en/">
-				Support			</a>
-			
-							<div class="minor_menu_items">
-																								<div class="menuitem change_language_action">
-									Change language								</div>
-																																	<a class="menuitem" href="https://store.steampowered.com/mobile" target="_blank" rel="noreferrer">Get the Steam Mobile App</a>
-																									<div class="menuitem" role="link" onclick="Responsive_RequestDesktopView();">
-										View desktop website									</div>
-															</div>
-						</div>
-						<div class="mainmenu_footer_spacer  "></div>
-						<div class="mainmenu_footer">
-															<div class="mainmenu_footer_logo"><img src="https://community.fastly.steamstatic.com/public/shared/images/responsive/footerLogo_valve_new.png"></div>
-								© Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.								<span class="mainmenu_valve_links">
-									<a href="https://store.steampowered.com/privacy_agreement/" target="_blank">Privacy Policy</a>
-									&nbsp;| &nbsp;<a href="http://www.valvesoftware.com/legal.htm" target="_blank">Legal</a>
-									&nbsp;| &nbsp;<a href="https://help.steampowered.com/faqs/view/10BB-D27A-6378-4436" target="_blank">Accessibility</a>
-									&nbsp;| &nbsp;<a href="https://store.steampowered.com/subscriber_agreement/" target="_blank">Steam Subscriber Agreement</a>
-									&nbsp;| &nbsp;<a href="https://store.steampowered.com/steam_refunds/" target="_blank">Refunds</a>
-									&nbsp;| &nbsp;<a href="https://store.steampowered.com/account/cookiepreferences/" target="_blank">Cookies</a>
-								</span>
-													</div>
-					</div>
-									</div>
-			</div>
-		
-		<div class="responsive_local_menu_tab"></div>
-
-		<div class="responsive_page_menu_ctn localmenu">
-			<div class="responsive_page_menu"  id="responsive_page_local_menu" data-panel="{&quot;onOptionsActionDescription&quot;:&quot;Filter&quot;,&quot;onOptionsButton&quot;:&quot;Responsive_ToggleLocalMenu()&quot;,&quot;onCancelButton&quot;:&quot;Responsive_ToggleLocalMenu()&quot;}">
-				<div class="localmenu_content" data-panel="{&quot;maintainY&quot;:true,&quot;bFocusRingRoot&quot;:true,&quot;flow-children&quot;:&quot;column&quot;}">
-				</div>
-			</div>
-		</div>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><profile>
+	<steamID64>76561199177832743</steamID64>
+	<steamID><![CDATA[Mano_Saguas]]></steamID>
+	<onlineState>online</onlineState>
+	<stateMessage><![CDATA[Online]]></stateMessage>
+	<privacyState>public</privacyState>
+	<visibilityState>3</visibilityState>
+	<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722.jpg]]></avatarIcon>
+	<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_medium.jpg]]></avatarMedium>
+	<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg]]></avatarFull>
+	<vacBanned>0</vacBanned>
+	<tradeBanState>None</tradeBanState>
+	<isLimitedAccount>0</isLimitedAccount>
+	<customURL><![CDATA[saguadin038]]></customURL>
+	<memberSince>June 6, 2021</memberSince>
+	<steamRating></steamRating>
+	<hoursPlayed2Wk>0.0</hoursPlayed2Wk>
+	<headline><![CDATA[]]></headline>
+	<location><![CDATA[Brasilia De Minas, Minas Gerais, Brazil]]></location>
+	<realname><![CDATA[Mano_Saguas]]></realname>
+	<summary><![CDATA[suas acoes podem mudar  meus pensamentos sobre voce]]></summary>
+ 	<mostPlayedGames>
+		<mostPlayedGame>
+			<gameName><![CDATA[Terraria]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/105600]]></gameLink>
+			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/capsule_184x69.jpg?t=1769844435]]></gameLogoSmall>
+			<hoursPlayed>26.3</hoursPlayed>
+			<hoursOnRecord>163</hoursOnRecord>
+			<statsName><![CDATA[105600]]></statsName>
+		</mostPlayedGame>
+		<mostPlayedGame>
+			<gameName><![CDATA[tModLoader]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/1281930]]></gameLink>
+			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1281930/capsule_184x69.jpg?t=1785952759]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1281930/capsule_184x69.jpg?t=1785952759]]></gameLogoSmall>
+			<hoursPlayed>21.6</hoursPlayed>
+			<hoursOnRecord>139</hoursOnRecord>
+		</mostPlayedGame>
+		<mostPlayedGame>
+			<gameName><![CDATA[DDNet]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/412220]]></gameLink>
+			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/412220/capsule_184x69.jpg?t=1757418450]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/412220/capsule_184x69.jpg?t=1757418450]]></gameLogoSmall>
+			<hoursPlayed>2.4</hoursPlayed>
+			<hoursOnRecord>1,738</hoursOnRecord>
+		</mostPlayedGame>
+		<mostPlayedGame>
+			<gameName><![CDATA[Brawlhalla]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/291550]]></gameLink>
+			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/291550/c43fac31b8bf8821764603a14d09412bc3d45f66.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/291550/ec3f86871c9ee6a2186a999d3a4f966f5432ec53/capsule_184x69.jpg?t=1787157167]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/291550/ec3f86871c9ee6a2186a999d3a4f966f5432ec53/capsule_184x69.jpg?t=1787157167]]></gameLogoSmall>
+			<hoursPlayed>0.8</hoursPlayed>
+			<hoursOnRecord>704</hoursOnRecord>
+			<statsName><![CDATA[291550]]></statsName>
+		</mostPlayedGame>
+		<mostPlayedGame>
+			<gameName><![CDATA[Moonlighter]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/606150]]></gameLink>
+			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/606150/13ffc570ce5bbe6a5a0c0eec567b87dab07cae25.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/606150/0ce5d10f8dfca4114ddc7579f1edc0e700bd3deb/capsule_184x69.jpg?t=1785952913]]></gameLogoSmall>
+			<hoursPlayed>0.4</hoursPlayed>
+			<hoursOnRecord>0.4</hoursOnRecord>
+			<statsName><![CDATA[606150]]></statsName>
+		</mostPlayedGame>
+		<mostPlayedGame>
+			<gameName><![CDATA[Happy Endings Demo]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/4738790]]></gameLink>
+			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/4738790/8c92c7d2ca35c6a4295215ba3edc1d8b20a31f50.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4738790/cf7f34b452f495762bdf0f820d9330904c0f8c19/capsule_184x69.jpg?t=1781223989]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4738790/cf7f34b452f495762bdf0f820d9330904c0f8c19/capsule_184x69.jpg?t=1781223989]]></gameLogoSmall>
+			<hoursPlayed>0.4</hoursPlayed>
+			<hoursOnRecord>0.4</hoursOnRecord>
+			<statsName><![CDATA[4738790]]></statsName>
+		</mostPlayedGame>
+	</mostPlayedGames>
 
 
-
-					<div class="responsive_header">
-				<div class="responsive_header_content">
-					<div id="responsive_menu_logo">
-						<img src="https://community.fastly.steamstatic.com/public/shared/images/responsive/header_menu_hamburger.png" height="100%">
-											</div>
-					<div class="responsive_header_logo">
-						<a href="https://store.steampowered.com/">
-															<img src="https://community.fastly.steamstatic.com/public/shared/images/responsive/header_logo.png" height="36" border="0" alt="STEAM">
-													</a>
-					</div>
-									</div>
-			</div>
-		
-		<div class="responsive_page_content_overlay">
-
-		</div>
-	
-	<div class="responsive_page_content">
-
-		<div role="banner" id="global_header" data-panel="{&quot;flow-children&quot;:&quot;row&quot;}">
-	<div class="content">
-		<div class="logo">
-			<span id="logo_holder">
-									<a href="https://store.steampowered.com/" aria-label="Link to the Steam Homepage">
-						<img src="https://community.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" width="144.5" height="44" alt="Link to the Steam Homepage">
-					</a>
-							</span>
-		</div>
-
-			<div role="navigation" class="supernav_container" aria-label="Global Menu">
-								<a class="menuitem supernav" href="https://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Store">
-				STORE			</a>
-			<div class="submenu_Store" style="display: none;" data-submenuid="Store">
-														<a class="submenuitem" href="https://store.steampowered.com/">
-						Home											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/explore/">
-						Discovery Queue											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/wishlist/">
-						Wishlist											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/points/shop/">
-						Points Shop											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/news/">
-						News											</a>
-														<a class="submenuitem" href="https://store.steampowered.com/stats/">
-						Charts											</a>
-							</div>
-										<a class="menuitem supernav supernav_active" href="https://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Community">
-				COMMUNITY			</a>
-			<div class="submenu_Community" style="display: none;" data-submenuid="Community">
-														<a class="submenuitem" href="https://steamcommunity.com/">
-						Home											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/discussions/">
-						Discussions											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/workshop/">
-						Workshop											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/market/">
-						Market											</a>
-														<a class="submenuitem" href="https://steamcommunity.com/?subsection=broadcasts">
-						Broadcasts											</a>
-							</div>
-										<a class="menuitem " href="https://store.steampowered.com/about/">
-				About			</a>
-										<a class="menuitem " href="https://help.steampowered.com/en/">
-				SUPPORT			</a>
-				</div>
-	<script type="text/javascript">
-		jQuery(function($) {
-			$('#global_header .supernav').v_tooltip({'location':'bottom', 'destroyWhenDone': false, 'tooltipClass': 'supernav_content', 'offsetY':-6, 'offsetX': 1, 'horizontalSnap': 4, 'tooltipParent': '#global_header .supernav_container', 'correctForScreenSize': false});
-		});
-	</script>
-
-		<div id="global_actions">
-			<div role="navigation" id="global_action_menu" aria-label="Account Menu">
-									<a class="header_installsteam_btn header_installsteam_btn_green" href="https://store.steampowered.com/about/">
-						<div class="header_installsteam_btn_content">
-							Install Steam						</div>
-					</a>
-				
-				
-									<a class="global_action_link" href="https://steamcommunity.com/login/home/?goto=id%2Fsaguadin038%2F%3Fxml%3D1">sign in</a>
-											&nbsp;|&nbsp;
-						<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">language</span>
-						<div class="popup_block_new" id="language_dropdown" style="display: none;">
-							<div class="popup_body popup_menu">
-																																															<a class="popup_menu_item tight" href="?l=schinese&xml=1" onclick="ChangeLanguage( 'schinese' ); return false;">
-											简体中文 (Simplified Chinese)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=tchinese&xml=1" onclick="ChangeLanguage( 'tchinese' ); return false;">
-											繁體中文 (Traditional Chinese)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=japanese&xml=1" onclick="ChangeLanguage( 'japanese' ); return false;">
-											日本語 (Japanese)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=koreana&xml=1" onclick="ChangeLanguage( 'koreana' ); return false;">
-											한국어 (Korean)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=thai&xml=1" onclick="ChangeLanguage( 'thai' ); return false;">
-											ไทย (Thai)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=indonesian&xml=1" onclick="ChangeLanguage( 'indonesian' ); return false;">
-											Bahasa Indonesia (Indonesian)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=malay&xml=1" onclick="ChangeLanguage( 'malay' ); return false;">
-											Bahasa Melayu (Malay)																							<span class="language_beta">BETA</span>
-																					</a>
-																																							<a class="popup_menu_item tight" href="?l=bulgarian&xml=1" onclick="ChangeLanguage( 'bulgarian' ); return false;">
-											Български (Bulgarian)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=czech&xml=1" onclick="ChangeLanguage( 'czech' ); return false;">
-											Čeština (Czech)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=danish&xml=1" onclick="ChangeLanguage( 'danish' ); return false;">
-											Dansk (Danish)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=german&xml=1" onclick="ChangeLanguage( 'german' ); return false;">
-											Deutsch (German)																					</a>
-																																																	<a class="popup_menu_item tight" href="?l=spanish&xml=1" onclick="ChangeLanguage( 'spanish' ); return false;">
-											Español - España (Spanish - Spain)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=latam&xml=1" onclick="ChangeLanguage( 'latam' ); return false;">
-											Español - Latinoamérica (Spanish - Latin America)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=greek&xml=1" onclick="ChangeLanguage( 'greek' ); return false;">
-											Ελληνικά (Greek)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=french&xml=1" onclick="ChangeLanguage( 'french' ); return false;">
-											Français (French)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=italian&xml=1" onclick="ChangeLanguage( 'italian' ); return false;">
-											Italiano (Italian)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=hungarian&xml=1" onclick="ChangeLanguage( 'hungarian' ); return false;">
-											Magyar (Hungarian)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=dutch&xml=1" onclick="ChangeLanguage( 'dutch' ); return false;">
-											Nederlands (Dutch)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=norwegian&xml=1" onclick="ChangeLanguage( 'norwegian' ); return false;">
-											Norsk (Norwegian)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=polish&xml=1" onclick="ChangeLanguage( 'polish' ); return false;">
-											Polski (Polish)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=portuguese&xml=1" onclick="ChangeLanguage( 'portuguese' ); return false;">
-											Português (Portuguese - Portugal)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=brazilian&xml=1" onclick="ChangeLanguage( 'brazilian' ); return false;">
-											Português - Brasil (Portuguese - Brazil)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=romanian&xml=1" onclick="ChangeLanguage( 'romanian' ); return false;">
-											Română (Romanian)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=russian&xml=1" onclick="ChangeLanguage( 'russian' ); return false;">
-											Русский (Russian)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=finnish&xml=1" onclick="ChangeLanguage( 'finnish' ); return false;">
-											Suomi (Finnish)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=swedish&xml=1" onclick="ChangeLanguage( 'swedish' ); return false;">
-											Svenska (Swedish)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=turkish&xml=1" onclick="ChangeLanguage( 'turkish' ); return false;">
-											Türkçe (Turkish)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=vietnamese&xml=1" onclick="ChangeLanguage( 'vietnamese' ); return false;">
-											Tiếng Việt (Vietnamese)																					</a>
-																																							<a class="popup_menu_item tight" href="?l=ukrainian&xml=1" onclick="ChangeLanguage( 'ukrainian' ); return false;">
-											Українська (Ukrainian)																					</a>
-																									<a class="popup_menu_item tight" href="https://www.valvesoftware.com/contact?contact-person=Translation%20Team%20Feedback" target="_blank">Report a translation problem</a>
-							</div>
-						</div>
-												</div>
-					</div>
-			</div>
-</div>
-<script type="text/javascript">
-	g_sessionID = "366f1f2d74605976c8688c81";
-	g_steamID = false;
-	g_strLanguage = "english";
-	g_SNR = '2_100300_profilexml_';
-	g_bAllowAppImpressions = true;
-		g_ContentDescriptorPreferences = [1,3,4];
-
-	
-
-	// We always want to have the timezone cookie set for PHP to use
-	setTimezoneCookies();
-
-	$J( function() {
-
-					InitMiniprofileHovers(( 'https%3A%2F%2Fsteamcommunity.com' ));
-			InitEmoticonHovers();
-		
-		ApplyAdultContentPreferences();
-	});
-
-	$J( function() { InitEconomyHovers( "https:\/\/community.fastly.steamstatic.com\/public\/css\/skin_1\/economy.css?v=RsRFFW9vaq1B&l=english&_cdn=fastly", "https:\/\/community.fastly.steamstatic.com\/public\/javascript\/economy_common.js?v=TSVmDS2fQKJu&l=english&_cdn=fastly", "https:\/\/community.fastly.steamstatic.com\/public\/javascript\/economy.js?v=pY7JMvljOOPC&l=english&_cdn=fastly" );});</script>
-
-		<div role="main" class="responsive_page_template_content" id="responsive_page_template_content" data-panel="{&quot;autoFocus&quot;:true,&quot;navKey&quot;:&quot;responsive_page_template_content&quot;}" >
-
-			<div class="error_ctn">
-	<div id="BG_top">
-		<div id="mainContents">
-			<h2>Error</h2>
-		</div>
-	</div>
-	<div id="BG_bottom">
-		<div id="message">
-			<h1>Sorry!</h1>
-			<p class="sectionText">
-				An error was encountered while processing your request:<br><br>
-			</p>
-			<h3>Failed loading profile data, please try again later.</h3><br><br>
-			<p class="returnLink">Here's a link to the Steam Community <a class="linkStandard" href="https://steamcommunity.com">home page</a>.</p>
-		</div>
-		<br clear="all" />
-	</div>
-</div>
-
-		</div>	<!-- responsive_page_legacy_content -->
-
-		<div  data-featuretarget="footer"></div>
-	</div>	<!-- responsive_page_content -->
-
-</div>	<!-- responsive_page_frame -->
-</body>
-</html>
+	<groups>
+		<group isPrimary="1">
+			<groupID64>103582791429670253</groupID64>
+			<groupName><![CDATA[Hentai!]]></groupName>
+			<groupURL><![CDATA[hentaii]]></groupURL>
+			<headline><![CDATA[Largest hentai &amp; ecchi community on steam! Everyone is welcome! ^^]]></headline>
+			<summary><![CDATA[<div class="bb_h1">Group for all Anime, Hentai &amp; Ecchi lovers ^^ All fans join!</div><br><b><a class="bb_link" href="https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fteespring.com%2Fstores%2Fhentai-official-store" target="_blank" rel=" noopener" >Original Hentai! Merchandise</a><span class="bb_link_host">[teespring.com]</span></b><br><br><b><a class="bb_link" href="http://store.steampowered.com/curator/31748181/" target="_blank" rel="" >Follow Our Steam Curator!</a></b><br><br><b><a class="bb_link" href="https://store.steampowered.com/publisher/Kagura/" target="_blank" rel="" >Check out great games from our friends Kagura Games!</a></b><br><br><b><a class="bb_link" href="https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FxZxMsQwgxE" target="_blank" rel=" noopener" >Discord!</a><span class="bb_link_host">[discord.gg]</span></b><br><br><b>Disclaimer: This group doesn't own any trade bots, anyone pretending to be one is trying to scam you!</b><br><br>Source of the current group avatar can be found on the forums!<br><br><b>Group rules:<br><ol><li>Forum/chat language: English.<br></li><li>No spam.<br></li><li>No linesplitting in chat (5max).<br></li><li>No harassment.<br></li><li>No flaming.<br></li><li>No erp in chat.<br></li><li>Advertising other groups is considered spam and will be deleted.                                                  <br></li><li>Respect the mods! Mods always have a reason to warn/kick/ban you.<br></li><li>Joke around, but don't be stupid and a dick.<br></li><li>Don't break the steam guidelines and regulations.<br></li><li>Don't post links to sites that violate international rules of what's acceptable.<br></li><li>Hentai related content is allowed.<br></li><li>Links to loli/shota are not allowed since they are illegal in some countries. <br></li><li>You can talk about anything, as long as it's not violating the rules above.<br></li><li>Trading through the chat is allowed, but do not spam trade offers.</li></ol><br>Repeatedly breaking any of these rules will lead to a warning, then a kick and finally a ban. </b><br><br><br>Content suitable only for adults ages 18 and up!<br><br><br><b><a class="bb_link" href="http://store.steampowered.com/curator/31748181/" target="_blank" rel="" >Steam Curator</a><br><a class="bb_link" href="https://steamcommunity.com/groups/hentaii/discussions/2/412448792357707986/" target="_blank" rel="" >Discord</a></b>]]></summary>
+			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
+			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
+			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
+			<memberCount>1461731</memberCount>
+			<membersInChat>240523</membersInChat>
+			<membersInGame>26309</membersInGame>
+			<membersOnline>152157</membersOnline>
+		</group>
+		<group isPrimary="0">
+			<groupID64>103582791464738143</groupID64>
+			<groupName><![CDATA[FURIA Esports BR]]></groupName>
+			<groupURL><![CDATA[FuriaEsportsBR]]></groupURL>
+			<headline><![CDATA[]]></headline>
+			<summary><![CDATA[No information given.]]></summary>
+			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
+			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
+			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
+			<memberCount>27272</memberCount>
+			<membersInChat>2213</membersInChat>
+			<membersInGame>1684</membersInGame>
+			<membersOnline>6356</membersOnline>
+		</group>
+		<group isPrimary="0">
+			<groupID64>103582791468067497</groupID64>
+			<groupName><![CDATA[DDNet ZA]]></groupName>
+			<groupURL><![CDATA[DDNetZA]]></groupURL>
+			<headline><![CDATA[]]></headline>
+			<summary><![CDATA[No information given.]]></summary>
+			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11.jpg]]></avatarIcon>
+			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_medium.jpg]]></avatarMedium>
+			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
+			<memberCount>219</memberCount>
+			<membersInChat>104</membersInChat>
+			<membersInGame>1</membersInGame>
+			<membersOnline>16</membersOnline>
+		</group>
+			<group isPrimary="0">
+				<groupID64>103582791470150257</groupID64>
+			</group>
+			</groups>
+</profile>
