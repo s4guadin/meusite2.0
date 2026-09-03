@@ -9,9 +9,9 @@
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "Terraria",
   "gameLink": "https://steamcommunity.com/app/105600",
-  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
+  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
   "hoursPlayed": "23.1",
-  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "Terraria",
@@ -38,5 +38,5 @@
       "horas": "0.4"
     }
   ],
-  "atualizadoEm": "2026-09-03T04:18:01.710863+00:00"
+  "atualizadoEm": "2026-09-03T08:59:26.424220+00:00"
 }
