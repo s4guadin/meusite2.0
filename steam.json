@@ -1,25 +1,25 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "offline",
-  "stateMessage": "Offline",
+  "onlineState": "online",
+  "stateMessage": "Online",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "Terraria",
   "gameLink": "https://steamcommunity.com/app/105600",
-  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
-  "hoursPlayed": "21.3",
-  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
+  "hoursPlayed": "20.3",
+  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "Terraria",
-      "horas": "21.3"
+      "horas": "20.3"
     },
     {
       "nome": "tModLoader",
-      "horas": "16.6"
+      "horas": "15.6"
     },
     {
       "nome": "DDNet",
@@ -34,5 +34,5 @@
       "horas": "0.4"
     }
   ],
-  "atualizadoEm": "2026-09-04T20:50:36.917044+00:00"
+  "atualizadoEm": "2026-09-04T22:43:11.722801+00:00"
 }
