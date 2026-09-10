@@ -9,9 +9,9 @@
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "tModLoader",
   "gameLink": "https://steamcommunity.com/app/1281930",
-  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
+  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1281930/e8a125078a31b8475994e8ce4d8d6fdd6becc131.jpg",
   "hoursPlayed": "4.6",
-  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "tModLoader",
@@ -38,5 +38,5 @@
       "horas": "0.4"
     }
   ],
-  "atualizadoEm": "2026-09-10T05:56:52.249523+00:00"
+  "atualizadoEm": "2026-09-10T10:41:13.538649+00:00"
 }
