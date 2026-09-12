@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><profile>
 	<steamID64>76561199177832743</steamID64>
 	<steamID><![CDATA[Mano_Saguas]]></steamID>
-	<onlineState>online</onlineState>
-	<stateMessage><![CDATA[Online]]></stateMessage>
+	<onlineState>offline</onlineState>
+	<stateMessage><![CDATA[Offline]]></stateMessage>
 	<privacyState>public</privacyState>
 	<visibilityState>3</visibilityState>
 	<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722.jpg]]></avatarIcon>
@@ -49,16 +49,6 @@
 			<statsName><![CDATA[105600]]></statsName>
 		</mostPlayedGame>
 		<mostPlayedGame>
-			<gameName><![CDATA[Brawlhalla]]></gameName>
-			<gameLink><![CDATA[https://steamcommunity.com/app/291550]]></gameLink>
-			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/291550/c43fac31b8bf8821764603a14d09412bc3d45f66.jpg]]></gameIcon>
-			<gameLogo><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/291550/ec3f86871c9ee6a2186a999d3a4f966f5432ec53/capsule_184x69.jpg?t=1787157167]]></gameLogo>
-			<gameLogoSmall><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/291550/ec3f86871c9ee6a2186a999d3a4f966f5432ec53/capsule_184x69.jpg?t=1787157167]]></gameLogoSmall>
-			<hoursPlayed>1.4</hoursPlayed>
-			<hoursOnRecord>704</hoursOnRecord>
-			<statsName><![CDATA[291550]]></statsName>
-		</mostPlayedGame>
-		<mostPlayedGame>
 			<gameName><![CDATA[Counter-Strike 2]]></gameName>
 			<gameLink><![CDATA[https://steamcommunity.com/app/730]]></gameLink>
 			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/730/8dbc71957312bbd3baea65848b545be9eae2a355.jpg]]></gameIcon>
@@ -67,6 +57,16 @@
 			<hoursPlayed>0.9</hoursPlayed>
 			<hoursOnRecord>27</hoursOnRecord>
 			<statsName><![CDATA[CSGO]]></statsName>
+		</mostPlayedGame>
+		<mostPlayedGame>
+			<gameName><![CDATA[Brawlhalla]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/291550]]></gameLink>
+			<gameIcon><![CDATA[https://shared.akamai.steamstatic.com/community_assets/images/apps/291550/c43fac31b8bf8821764603a14d09412bc3d45f66.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/291550/ec3f86871c9ee6a2186a999d3a4f966f5432ec53/capsule_184x69.jpg?t=1787157167]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/291550/ec3f86871c9ee6a2186a999d3a4f966f5432ec53/capsule_184x69.jpg?t=1787157167]]></gameLogoSmall>
+			<hoursPlayed>0.6</hoursPlayed>
+			<hoursOnRecord>704</hoursOnRecord>
+			<statsName><![CDATA[291550]]></statsName>
 		</mostPlayedGame>
 		<mostPlayedGame>
 			<gameName><![CDATA[BAPBAP]]></gameName>
@@ -90,10 +90,10 @@
 			<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
-			<memberCount>1461593</memberCount>
+			<memberCount>1461590</memberCount>
 			<membersInChat>240523</membersInChat>
-			<membersInGame>32299</membersInGame>
-			<membersOnline>163547</membersOnline>
+			<membersInGame>26691</membersInGame>
+			<membersOnline>142983</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791464738143</groupID64>
@@ -104,10 +104,10 @@
 			<avatarIcon><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
-			<memberCount>27420</memberCount>
+			<memberCount>27423</memberCount>
 			<membersInChat>2247</membersInChat>
-			<membersInGame>1877</membersInGame>
-			<membersOnline>6382</membersOnline>
+			<membersInGame>1198</membersInGame>
+			<membersOnline>4184</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791468067497</groupID64>
@@ -120,8 +120,8 @@
 			<avatarFull><![CDATA[https://avatars.akamai.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
 			<memberCount>220</memberCount>
 			<membersInChat>105</membersInChat>
-			<membersInGame>3</membersInGame>
-			<membersOnline>18</membersOnline>
+			<membersInGame>4</membersInGame>
+			<membersOnline>24</membersOnline>
 		</group>
 			<group isPrimary="0">
 				<groupID64>103582791470150257</groupID64>
