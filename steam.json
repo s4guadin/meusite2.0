@@ -9,13 +9,13 @@
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "DDNet",
   "gameLink": "https://steamcommunity.com/app/412220",
-  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg",
-  "hoursPlayed": "3.2",
-  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg",
+  "hoursPlayed": "4.0",
+  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "DDNet",
-      "horas": "3.2"
+      "horas": "4.0"
     },
     {
       "nome": "tModLoader",
@@ -38,5 +38,5 @@
       "horas": "0.3"
     }
   ],
-  "atualizadoEm": "2026-09-12T20:02:20.504178+00:00"
+  "atualizadoEm": "2026-09-12T22:12:54.842067+00:00"
 }
