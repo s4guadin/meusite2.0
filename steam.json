@@ -2,7 +2,7 @@
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
   "onlineState": "in-game",
-  "stateMessage": "In-Game<br/>Euro Truck Simulator 2",
+  "stateMessage": "In-Game<br/>DDNet",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
@@ -10,29 +10,29 @@
   "gameName": "DDNet",
   "gameLink": "https://steamcommunity.com/app/412220",
   "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg",
-  "hoursPlayed": "5.1",
+  "hoursPlayed": "7.2",
   "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "DDNet",
-      "horas": "5.1"
+      "horas": "7.2"
     },
     {
       "nome": "PEAK",
       "horas": "2.3"
     },
     {
-      "nome": "Counter-Strike 2",
-      "horas": "1.1"
+      "nome": "Euro Truck Simulator 2",
+      "horas": "1.9"
     },
     {
-      "nome": "Euro Truck Simulator 2",
-      "horas": "1.0"
+      "nome": "Counter-Strike 2",
+      "horas": "1.1"
     },
     {
       "nome": "Rhythia",
       "horas": "0.1"
     }
   ],
-  "atualizadoEm": "2026-09-20T11:59:41.872712+00:00"
+  "atualizadoEm": "2026-09-20T15:52:51.472192+00:00"
 }

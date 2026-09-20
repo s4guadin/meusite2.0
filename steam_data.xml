@@ -2,7 +2,7 @@
 	<steamID64>76561199177832743</steamID64>
 	<steamID><![CDATA[Mano_Saguas]]></steamID>
 	<onlineState>in-game</onlineState>
-	<stateMessage><![CDATA[In-Game<br/>Euro Truck Simulator 2]]></stateMessage>
+	<stateMessage><![CDATA[In-Game<br/>DDNet]]></stateMessage>
 	<privacyState>public</privacyState>
 	<visibilityState>3</visibilityState>
 	<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722.jpg]]></avatarIcon>
@@ -26,8 +26,8 @@
 			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg]]></gameIcon>
 			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/412220/capsule_184x69.jpg?t=1757418450]]></gameLogo>
 			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/412220/capsule_184x69.jpg?t=1757418450]]></gameLogoSmall>
-			<hoursPlayed>5.1</hoursPlayed>
-			<hoursOnRecord>1,744</hoursOnRecord>
+			<hoursPlayed>7.2</hoursPlayed>
+			<hoursOnRecord>1,746</hoursOnRecord>
 		</mostPlayedGame>
 		<mostPlayedGame>
 			<gameName><![CDATA[PEAK]]></gameName>
@@ -40,6 +40,16 @@
 			<statsName><![CDATA[3527290]]></statsName>
 		</mostPlayedGame>
 		<mostPlayedGame>
+			<gameName><![CDATA[Euro Truck Simulator 2]]></gameName>
+			<gameLink><![CDATA[https://steamcommunity.com/app/227300]]></gameLink>
+			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/227300/adc18a4fc9adc0330144b76d61cbda68bb2394a0.jpg]]></gameIcon>
+			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/da84d11d3ddd817e0cca299608b469a854d75ba5/capsule_184x69.jpg?t=1785394779]]></gameLogo>
+			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/da84d11d3ddd817e0cca299608b469a854d75ba5/capsule_184x69.jpg?t=1785394779]]></gameLogoSmall>
+			<hoursPlayed>1.9</hoursPlayed>
+			<hoursOnRecord>10.0</hoursOnRecord>
+			<statsName><![CDATA[227300]]></statsName>
+		</mostPlayedGame>
+		<mostPlayedGame>
 			<gameName><![CDATA[Counter-Strike 2]]></gameName>
 			<gameLink><![CDATA[https://steamcommunity.com/app/730]]></gameLink>
 			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/730/8dbc71957312bbd3baea65848b545be9eae2a355.jpg]]></gameIcon>
@@ -48,16 +58,6 @@
 			<hoursPlayed>1.1</hoursPlayed>
 			<hoursOnRecord>27</hoursOnRecord>
 			<statsName><![CDATA[CSGO]]></statsName>
-		</mostPlayedGame>
-		<mostPlayedGame>
-			<gameName><![CDATA[Euro Truck Simulator 2]]></gameName>
-			<gameLink><![CDATA[https://steamcommunity.com/app/227300]]></gameLink>
-			<gameIcon><![CDATA[https://shared.fastly.steamstatic.com/community_assets/images/apps/227300/adc18a4fc9adc0330144b76d61cbda68bb2394a0.jpg]]></gameIcon>
-			<gameLogo><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/da84d11d3ddd817e0cca299608b469a854d75ba5/capsule_184x69.jpg?t=1785394779]]></gameLogo>
-			<gameLogoSmall><![CDATA[https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/da84d11d3ddd817e0cca299608b469a854d75ba5/capsule_184x69.jpg?t=1785394779]]></gameLogoSmall>
-			<hoursPlayed>1.0</hoursPlayed>
-			<hoursOnRecord>9.1</hoursOnRecord>
-			<statsName><![CDATA[227300]]></statsName>
 		</mostPlayedGame>
 		<mostPlayedGame>
 			<gameName><![CDATA[Rhythia]]></gameName>
@@ -82,10 +82,10 @@
 			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
-			<memberCount>1461484</memberCount>
+			<memberCount>1461442</memberCount>
 			<membersInChat>240523</membersInChat>
-			<membersInGame>57053</membersInGame>
-			<membersOnline>248924</membersOnline>
+			<membersInGame>69036</membersInGame>
+			<membersOnline>285684</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791464738143</groupID64>
@@ -96,10 +96,10 @@
 			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
-			<memberCount>27511</memberCount>
+			<memberCount>27517</memberCount>
 			<membersInChat>2273</membersInChat>
-			<membersInGame>788</membersInGame>
-			<membersOnline>3555</membersOnline>
+			<membersInGame>1485</membersInGame>
+			<membersOnline>5914</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791468067497</groupID64>
@@ -112,8 +112,8 @@
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
 			<memberCount>221</memberCount>
 			<membersInChat>105</membersInChat>
-			<membersInGame>13</membersInGame>
-			<membersOnline>67</membersOnline>
+			<membersInGame>22</membersInGame>
+			<membersOnline>73</membersOnline>
 		</group>
 			<group isPrimary="0">
 				<groupID64>103582791470150257</groupID64>
