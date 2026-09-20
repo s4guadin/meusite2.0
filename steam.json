@@ -1,21 +1,21 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "online",
-  "stateMessage": "Online",
+  "onlineState": "in-game",
+  "stateMessage": "In-Game<br/>Euro Truck Simulator 2",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "DDNet",
   "gameLink": "https://steamcommunity.com/app/412220",
-  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg",
-  "hoursPlayed": "4.3",
-  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg",
+  "hoursPlayed": "5.1",
+  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "DDNet",
-      "horas": "4.3"
+      "horas": "5.1"
     },
     {
       "nome": "PEAK",
@@ -27,12 +27,12 @@
     },
     {
       "nome": "Euro Truck Simulator 2",
-      "horas": "0.3"
+      "horas": "1.0"
     },
     {
       "nome": "Rhythia",
       "horas": "0.1"
     }
   ],
-  "atualizadoEm": "2026-09-20T06:56:01.595974+00:00"
+  "atualizadoEm": "2026-09-20T11:59:41.872712+00:00"
 }
