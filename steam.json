@@ -1,8 +1,8 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "online",
-  "stateMessage": "Online",
+  "onlineState": "offline",
+  "stateMessage": "Offline",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
@@ -10,12 +10,12 @@
   "gameName": "DDNet",
   "gameLink": "https://steamcommunity.com/app/412220",
   "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/412220/fd98ee937665b65eeb4309d04709abad88c7dfa6.jpg",
-  "hoursPlayed": "8.9",
+  "hoursPlayed": "9.6",
   "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "DDNet",
-      "horas": "8.9"
+      "horas": "9.6"
     },
     {
       "nome": "Euro Truck Simulator 2",
@@ -30,5 +30,5 @@
       "horas": "0.8"
     }
   ],
-  "atualizadoEm": "2026-09-22T00:45:55.860294+00:00"
+  "atualizadoEm": "2026-09-22T05:27:11.363378+00:00"
 }
