@@ -72,10 +72,10 @@
 			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/5f18395d412f524e2dc02d57f1c3ba47f367f08b_full.jpg]]></avatarFull>
-			<memberCount>1461491</memberCount>
+			<memberCount>1461725</memberCount>
 			<membersInChat>240523</membersInChat>
-			<membersInGame>26043</membersInGame>
-			<membersOnline>148703</membersOnline>
+			<membersInGame>22612</membersInGame>
+			<membersOnline>134160</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791464738143</groupID64>
@@ -86,10 +86,10 @@
 			<avatarIcon><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd.jpg]]></avatarIcon>
 			<avatarMedium><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_medium.jpg]]></avatarMedium>
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/e1d7697d15168dd062e3f202b5661dd5d0e09ddd_full.jpg]]></avatarFull>
-			<memberCount>27540</memberCount>
-			<membersInChat>2280</membersInChat>
-			<membersInGame>1529</membersInGame>
-			<membersOnline>6374</membersOnline>
+			<memberCount>27651</memberCount>
+			<membersInChat>2300</membersInChat>
+			<membersInGame>1710</membersInGame>
+			<membersOnline>5889</membersOnline>
 		</group>
 		<group isPrimary="0">
 			<groupID64>103582791468067497</groupID64>
@@ -102,8 +102,8 @@
 			<avatarFull><![CDATA[https://avatars.fastly.steamstatic.com/faaa62b25ea7a18e81edaf872612f0ed69b27e11_full.jpg]]></avatarFull>
 			<memberCount>221</memberCount>
 			<membersInChat>105</membersInChat>
-			<membersInGame>4</membersInGame>
-			<membersOnline>22</membersOnline>
+			<membersInGame>2</membersInGame>
+			<membersOnline>17</membersOnline>
 		</group>
 			<group isPrimary="0">
 				<groupID64>103582791470150257</groupID64>
