@@ -1,8 +1,8 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "offline",
-  "stateMessage": "Offline",
+  "onlineState": "in-game",
+  "stateMessage": "In-Game<br/>Euro Truck Simulator 2",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
@@ -30,5 +30,5 @@
       "horas": "0.8"
     }
   ],
-  "atualizadoEm": "2026-09-25T23:23:43.499308+00:00"
+  "atualizadoEm": "2026-09-26T01:46:22.856641+00:00"
 }
