@@ -1,22 +1,26 @@
 {
   "steamID": "Mano_Saguas",
   "steamID64": "76561199177832743",
-  "onlineState": "offline",
-  "stateMessage": "Offline",
+  "onlineState": "online",
+  "stateMessage": "Online",
   "memberSince": "June 6, 2021",
   "location": "Brasilia De Minas, Minas Gerais, Brazil",
   "realname": "Mano_Saguas",
   "summary": "suas acoes podem mudar  meus pensamentos sobre voce",
   "gameName": "Euro Truck Simulator 2",
   "gameLink": "https://steamcommunity.com/app/227300",
-  "gameIcon": "https://shared.fastly.steamstatic.com/community_assets/images/apps/227300/adc18a4fc9adc0330144b76d61cbda68bb2394a0.jpg",
+  "gameIcon": "https://shared.akamai.steamstatic.com/community_assets/images/apps/227300/adc18a4fc9adc0330144b76d61cbda68bb2394a0.jpg",
   "hoursPlayed": "0.6",
-  "avatarFull": "https://avatars.fastly.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
+  "avatarFull": "https://avatars.akamai.steamstatic.com/3b5e7b5ba020c9a671d8b1b26533550c768f8722_full.jpg",
   "jogos": [
     {
       "nome": "Euro Truck Simulator 2",
       "horas": "0.6"
+    },
+    {
+      "nome": "PEAK",
+      "horas": "0.3"
     }
   ],
-  "atualizadoEm": "2026-10-10T20:38:57.497585+00:00"
+  "atualizadoEm": "2026-10-10T23:48:55.604544+00:00"
 }
